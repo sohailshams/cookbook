@@ -2,7 +2,7 @@
 {% block content %}
 <h3>Add Recipe</h3>
 <div class="row">
-    <form action="" method="POST" class="col s12">
+    <form action="{{url_for('insert_recipe')}}" method="POST" class="col s12">
         <div class="row">
             <div class="input-field col s12">
             <i class="material-icons prefix">outdoor_grill</i>
@@ -37,16 +37,16 @@
         <i class="material-icons prefix">local_dining</i>
     <select class="recipe_cuisine" name="recipe_cuisine" >
       <option value="" disabled selected>Choose your option</option>
-      <option value="1">Pakistani</option>
-      <option value="2">British</option>
-      <option value="3">Chinese</option>
-      <option value="4">American</option>
-      <option value="5">Turkish</option>
-      <option value="6">Italian</option>
-      <option value="7">Mexican</option>
-      <option value="8">French</option>
-      <option value="9">Mediterranean</option>
-      <option value="10">Indian</option>
+      <option value="Pakistani">Pakistani</option>
+      <option value="British">British</option>
+      <option value="Chinese">Chinese</option>
+      <option value="American">American</option>
+      <option value="Turkish">Turkish</option>
+      <option value="Italian">Italian</option>
+      <option value="Mexican">Mexican</option>
+      <option value="French">French</option>
+      <option value="Mediterranean">Mediterranean</option>
+      <option value="Indian">Indian</option>
     </select>
     <label>Select Cuisine</label>
   </div>        
@@ -55,11 +55,11 @@
         <i class="material-icons prefix">av_timer</i>
     <select id="cooking_time" name="cooking_time" >
       <option value="" disabled selected>Choose your option</option>
-      <option value="1">0 - 10m</option>
-      <option value="2">10 - 30m</option>
-      <option value="3">30 - 1m</option>
-      <option value="4">1 - 2h</option>
-      <option value="5">2h +</option>
+      <option value="0 - 10m">0 - 10m</option>
+      <option value="10 - 30m">10 - 30m</option>
+      <option value="30 - 1m">30 - 1m</option>
+      <option value="1 - 2h">1 - 2h</option>
+      <option value="2h +">2h +</option>
     </select>
     <label>Cooking Time</label>
   </div>        
@@ -68,11 +68,11 @@
         <i class="material-icons prefix">format_list_bulleted</i>
     <select id="recipe_type" name="recipe_type" >
       <option value="" disabled selected>Choose your option</option>
-      <option value="1">Starter</option>
-      <option value="2">Main</option>
-      <option value="3">Dessert</option>
-      <option value="4">Tea</option>
-      <option value="5">Drink</option>
+      <option value="Starter">Starter</option>
+      <option value="Main">Main</option>
+      <option value="Dessert">Dessert</option>
+      <option value="Tea">Tea</option>
+      <option value="Drink">Drink</option>
      </select>
     <label>Type</label>
   </div>        
@@ -81,12 +81,12 @@
         <i class="material-icons prefix">person</i>
     <select id="recipe_serving" name="recipe_serving" >
       <option value="" disabled selected>Choose your option</option>
-      <option value="1">1 - 2</option>
-      <option value="2">3 - 4</option>
-      <option value="3">5 - 6</option>
-      <option value="4">7 - 8</option>
-      <option value="5">9 - 10</option>
-      <option value="6">10 +</option>
+      <option value="1 - 2">1 - 2</option>
+      <option value="3 - 4">3 - 4</option>
+      <option value="5 - 6">5 - 6</option>
+      <option value="7 - 8">7 - 8</option>
+      <option value="9 - 10">9 - 10</option>
+      <option value="10 +">10 +</option>
      </select>
     <label>Serving</label>
   </div>        
