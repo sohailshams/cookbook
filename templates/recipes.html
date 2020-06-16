@@ -3,13 +3,13 @@
 
 </head>
 <body>
-    {% for recipe in recipes %}
-    {{recipe.recipe_name}}
-    {{recipe.recipe_cuisine}}
-    {{recipe.recipe_ingredients}}
-    {{recipe.recipe_description}}
-    {{recipe.recipe_preparation}}
-    {{recipe.recipe_date}}
+    {% for recipes in recipe %}
+    {{recipes.recipe_name}}
+    {{recipes.recipe_cuisine}}
+    {{recipes.recipe_ingredients}}
+    {{recipes.recipe_description}}
+    {{recipes.recipe_preparation}}
+    {{recipes.recipe_date}}
     {% endfor %}
 </body>
 </html>
