@@ -17,6 +17,8 @@
             $('.collapsible').collapsible();
             $('select').material_select();    
         });
+        // Added underline code to show feedback message of required in the select
+        $("select[required]").css({display: "block", height: 0, padding: 0, width: 0, position: 'absolute'});
         $(".datepicker").pickadate({
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 15, // Creates a dropdown of 15 years to control year,
