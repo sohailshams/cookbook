@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
-    
-    
-    </head>
-    <body>
-        {% block content %}
-        {% endblock %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
+
+<head>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+
+
+</head>
+
+<body>
+	{% block content %}
+	{% endblock %}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
             $('.collapsible').collapsible();
             $('select').material_select();    
         });
         // Added underline code to show feedback message of required in the select
+        //source stack overflow
         $("select[required]").css({display: "block", height: 0, padding: 0, width: 0, position: 'absolute'});
         $(".datepicker").pickadate({
         selectMonths: true, // Creates a dropdown to control month
@@ -27,12 +30,30 @@
         close: "Ok",
         closeOnSelect: false, // Close upon selecting a date,
       });
-    </script>
-    <script>
-    // Added following code as there is bug in Materialize for datepicker
+      // Added underline code to make date picker field required
+      // Source https://jsfiddle.net/9e33kq0q/1/
+      function checkDate() {
+	if ($('#recipe_date').val() == '') {
+    $('#recipe_date').addClass('invalid')
+  } else {
+    $('#recipe_date').removeClass('invalid')
+  }
+}
+$('form').submit(function() {
+  checkDate();
+  return false;
+});
+$('#recipe_date').change(function() {
+  checkDate();
+});
+
+	</script>
+	<script>
+		// Added following code as there is bug in Materialize for datepicker
       document.getElementById("matfix").addEventListener("click", function (e) {
         e.stopPropagation();
       });
-    </script>
-    </body>
+	</script>
+</body>
+
 </html>
