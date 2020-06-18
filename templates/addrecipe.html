@@ -61,12 +61,10 @@
         <i class="material-icons prefix">format_list_bulleted</i>
     <select id="recipe_type" name="recipe_type" required>
       <option value="" disabled selected>Choose your option</option>
-      <option value="Starter">Starter</option>
-      <option value="Main">Main</option>
-      <option value="Dessert">Dessert</option>
-      <option value="Tea">Tea</option>
-      <option value="Drink">Drink</option>
-     </select>
+      {% for rtype in type %}
+      <option value="{{rtype.recipe_type}}">{{rtype.recipe_type}}</option>
+      {% endfor %}  
+      </select>
     <label>Type</label>
   </div>        
 
