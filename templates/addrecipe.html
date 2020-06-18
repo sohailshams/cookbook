@@ -37,18 +37,11 @@
         <div class="row">
         <div class="input-field col s12 m6 l3">
         <i class="material-icons prefix">local_dining</i>
-    <select class="recipe_cuisine" id="recipe_cuisine" name="recipe_cuisine" required>
-      <option value="">Choose your option </option>
-      <option value="Pakistani">Pakistani</option>
-      <option value="British">British</option>
-      <option value="Chinese">Chinese</option>
-      <option value="American">American</option>
-      <option value="Turkish">Turkish</option>
-      <option value="Italian">Italian</option>
-      <option value="Mexican">Mexican</option>
-      <option value="French">French</option>
-      <option value="Mediterranean">Mediterranean</option>
-      <option value="Indian">Indian</option>
+    <select class="recipe_cuisine" id="recipe_cuisine" name="cuisine_name" required>
+      <option value="" disabled selected>Choose your option </option>
+      {% for cuisine in cuisines %}
+      <option value="{{cuisine.cuisine_name}}">{{cuisine.cuisine_name}}</option>
+      {% endfor %}
     </select>
     <label>Select Cuisine</label>
   </div>        
