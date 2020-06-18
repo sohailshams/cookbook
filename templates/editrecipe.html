@@ -34,21 +34,14 @@
             <label for="icon_telephone">Recipe Preparation</label>
         </div>
         </div>
-        <div class="row">
+       <div class="row">
         <div class="input-field col s12 m6 l3">
         <i class="material-icons prefix">local_dining</i>
-    <select class="recipe_cuisine" id="recipe_cuisine" name="recipe_cuisine" required>
-      <option value="">Choose your option </option>
-      <option value="Pakistani">Pakistani</option>
-      <option value="British">British</option>
-      <option value="Chinese">Chinese</option>
-      <option value="American">American</option>
-      <option value="Turkish">Turkish</option>
-      <option value="Italian">Italian</option>
-      <option value="Mexican">Mexican</option>
-      <option value="French">French</option>
-      <option value="Mediterranean">Mediterranean</option>
-      <option value="Indian">Indian</option>
+    <select class="recipe_cuisine" id="recipe_cuisine" name="cuisine_name" required>
+      <option value="" disabled selected>Choose your option </option>
+      {% for cuisine in cuisines %}
+      <option value="{{cuisine.cuisine_name}}">{{cuisine.cuisine_name}}</option>
+      {% endfor %}
     </select>
     <label>Select Cuisine</label>
   </div>        
@@ -56,12 +49,10 @@
 <div class="input-field col s12 m6 l3">
         <i class="material-icons prefix">av_timer</i>
     <select id="cooking_time" name="cooking_time" required>
-      <option value="">Choose your option</option>
-      <option value="0 - 10m">0 - 10m</option>
-      <option value="10 - 30m">10 - 30m</option>
-      <option value="30 - 1m">30 - 1m</option>
-      <option value="1 - 2h">1 - 2h</option>
-      <option value="2h +">2h +</option>
+      <option value="" disabled selected>Choose your option</option>
+      {% for time in cooktime %}
+      <option value="{{time.cooking_time}}">{{time.cooking_time}}</option>
+      {% endfor %}  
     </select>
     <label>Cooking Time</label>
   </div>        
@@ -69,29 +60,24 @@
   <div class="input-field col s12 m6 l3">
         <i class="material-icons prefix">format_list_bulleted</i>
     <select id="recipe_type" name="recipe_type" required>
-      <option value="">Choose your option</option>
-      <option value="Starter">Starter</option>
-      <option value="Main">Main</option>
-      <option value="Dessert">Dessert</option>
-      <option value="Tea">Tea</option>
-      <option value="Drink">Drink</option>
-     </select>
+      <option value="" disabled selected>Choose your option</option>
+      {% for rtype in type %}
+      <option value="{{rtype.recipe_type}}">{{rtype.recipe_type}}</option>
+      {% endfor %}  
+      </select>
     <label>Type</label>
   </div>        
 
   <div class="input-field col s12 m6 l3">
         <i class="material-icons prefix">person</i>
     <select id="recipe_serving" name="recipe_serving" required>
-      <option value="">Choose your option</option>
-      <option value="1 - 2">1 - 2</option>
-      <option value="3 - 4">3 - 4</option>
-      <option value="5 - 6">5 - 6</option>
-      <option value="7 - 8">7 - 8</option>
-      <option value="9 - 10">9 - 10</option>
-      <option value="10 +">10 +</option>
-     </select>
+      <option value="" disabled selected>Choose your option</option>
+      {% for serve in serving %}
+      <option value="{{serve.recipe_serving}}">{{serve.recipe_serving}}</option>
+      {% endfor %} 
+      </select>
     <label>Serving</label>
-  </div>        
+  </div>       
 <div class="row">
       <div class="input-field col s12" id="matfix">
         <i class="material-icons prefix">today</i>
