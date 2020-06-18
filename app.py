@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 """MongoDB - setting env variables"""
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
+app.config["MONGO_DBNAME"] = 'online_cookbook'
 
 
 mongo = PyMongo(app)
@@ -33,6 +33,12 @@ def insert_recipe():
     recipe = mongo.db.recipe
     recipe.insert_one(request.form.to_dict())
     return redirect(url_for('get_recipes'))
+
+
+@app.route('/view_recipe/<recipe_id>')
+def view_recipe(recipe_id):
+    the_recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
+    return render_template('viewrecipe.html', recipe=the_recipe)
 
 
 if __name__ == '__main__':
