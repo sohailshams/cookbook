@@ -28,7 +28,8 @@ def add_recipe():
     return render_template('addrecipe.html',
                            cuisines=mongo.db.cuisines.find(),
                            cooktime=mongo.db.cooktime.find(),
-                           type=mongo.db.type.find())
+                           type=mongo.db.type.find(),
+                           serving=mongo.db.serving.find())
 
 
 @app.route('/insert_recipe', methods=['POST'])
