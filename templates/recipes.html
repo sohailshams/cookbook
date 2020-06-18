@@ -7,7 +7,7 @@
 		<div class="collapsible-header">
 			<div class="col s4">
             <i class="material-icons">expand_more</i>
-                <a href="" class="waves-effect waves-light btn btn_size">View</a>
+                <a href="{{url_for('view_recipe', recipe_id=recipes._id)}}" class="waves-effect waves-light btn btn_size">View</a>
 			</div>
 			<div class="col s8 recipe_name">
             <strong>{{recipes.recipe_name}}</strong> - {{recipes.recipe_cuisine}}</div>
