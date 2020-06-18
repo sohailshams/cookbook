@@ -48,7 +48,15 @@ def view_recipe(recipe_id):
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
-    return render_template('editrecipe.html', recipe=the_recipe)
+    all_cuisines = mongo.db.cuisines.find()
+    all_cooktime = mongo.db.cooktime.find()
+    all_type = mongo.db.type.find()
+    all_serving = mongo.db.serving.find()
+    return render_template('editrecipe.html', recipe=the_recipe,
+                           cuisines=all_cuisines,
+                           cooktime=all_cooktime,
+                           type=all_type,
+                           serving=all_serving)
 
 
 if __name__ == '__main__':
