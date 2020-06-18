@@ -72,13 +72,10 @@
         <i class="material-icons prefix">person</i>
     <select id="recipe_serving" name="recipe_serving" required>
       <option value="" disabled selected>Choose your option</option>
-      <option value="1 - 2">1 - 2</option>
-      <option value="3 - 4">3 - 4</option>
-      <option value="5 - 6">5 - 6</option>
-      <option value="7 - 8">7 - 8</option>
-      <option value="9 - 10">9 - 10</option>
-      <option value="10 +">10 +</option>
-     </select>
+      {% for serve in serving %}
+      <option value="{{serve.recipe_serving}}">{{serve.recipe_serving}}</option>
+      {% endfor %} 
+      </select>
     <label>Serving</label>
   </div>        
 <div class="row">
