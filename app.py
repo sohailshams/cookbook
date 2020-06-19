@@ -37,8 +37,7 @@ def insert_recipe():
     recipe = mongo.db.recipe
     recipe.insert_one(request.form.to_dict())
     return redirect(url_for('get_recipes'))
-    print('hello world')
-
+    
 
 @app.route('/view_recipe/<recipe_id>')
 def view_recipe(recipe_id):
@@ -58,6 +57,25 @@ def edit_recipe(recipe_id):
                            cooktime=all_cooktime,
                            recipetype=all_recipetype,
                            serving=all_serving)
+
+
+@app.route('/update_recipe/<recipe_id>', methods=["POST"])
+def update_recipe(recipe_id):
+    recipe = mongo.db.recipe
+    recipe.update({'_id': ObjectId(recipe_id)},
+    {
+        'recipe_name': request.form.get('recipe_name'),
+        'recipe_cuisine': request.form.get('recipe_cuisine'),
+        'recipe_ingredients': request.form.get('recipe_ingredients'),
+        'recipe_description': request.form.get('recipe_description'),
+        'recipe_preparation': request.form.get('recipe_preparation'),
+        'recipe_date': request.form.get('recipe_date'),
+        'cooking_time': request.form.get('cooking_time'),
+        'recipe_preparation': request.form.get('recipe_preparation'),
+        'recipe_type': request.form.get('recipe_type'),
+        'recipe_serving': request.form.get('recipe_serving')
+    })
+    return redirect(url_for('get_recipes'))
 
 
 if __name__ == '__main__':
