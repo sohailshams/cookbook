@@ -28,7 +28,7 @@ def add_recipe():
     return render_template('addrecipe.html',
                            cuisines=mongo.db.cuisines.find(),
                            cooktime=mongo.db.cooktime.find(),
-                           type=mongo.db.type.find(),
+                           recipetype=mongo.db.recipetype.find(),
                            serving=mongo.db.serving.find())
 
 
@@ -37,6 +37,7 @@ def insert_recipe():
     recipe = mongo.db.recipe
     recipe.insert_one(request.form.to_dict())
     return redirect(url_for('get_recipes'))
+    print('hello world')
 
 
 @app.route('/view_recipe/<recipe_id>')
@@ -50,12 +51,12 @@ def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
     all_cuisines = mongo.db.cuisines.find()
     all_cooktime = mongo.db.cooktime.find()
-    all_type = mongo.db.type.find()
+    all_recipetype = mongo.db.recipetype.find()
     all_serving = mongo.db.serving.find()
     return render_template('editrecipe.html', recipe=the_recipe,
                            cuisines=all_cuisines,
                            cooktime=all_cooktime,
-                           type=all_type,
+                           recipetype=all_recipetype,
                            serving=all_serving)
 
 
