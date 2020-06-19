@@ -40,7 +40,11 @@
     <select class="recipe_cuisine" id="recipe_cuisine" name="recipe_cuisine" required>
       <option value="" disabled selected>Choose your option </option>
       {% for cuisine in cuisines %}
+      {% if cuisine.recipe_cuisine == recipe.recipe_cuisine %}
+      <option value="{{cuisine.recipe_cuisine}}" selected >{{cuisine.recipe_cuisine}}</option>
+      {% else%}
       <option value="{{cuisine.recipe_cuisine}}">{{cuisine.recipe_cuisine}}</option>
+      {% endif %}
       {% endfor %}
     </select>
     <label>Select Cuisine</label>
@@ -51,7 +55,11 @@
     <select id="cooking_time" name="cooking_time" required>
       <option value="" disabled selected>Choose your option</option>
       {% for time in cooktime %}
+      {% if time.cooking_time == recipe.cooking_time %}
+      <option value="{{time.cooking_time}}" selected >{{time.cooking_time}}</option>
+      {% else %}
       <option value="{{time.cooking_time}}">{{time.cooking_time}}</option>
+      {% endif%}
       {% endfor %}  
     </select>
     <label>Cooking Time</label>
@@ -62,7 +70,11 @@
     <select id="recipe_type" name="recipe_type" required>
       <option value="" disabled selected>Choose your option</option>
       {% for rtype in recipetype %}
+      {% if rtype.recipe_type == recipe.recipe_type %}
+      <option value="{{rtype.recipe_type}}" selected >{{rtype.recipe_type}}</option>
+      {% else %}
       <option value="{{rtype.recipe_type}}">{{rtype.recipe_type}}</option>
+      {% endif %}
       {% endfor %}  
       </select>
     <label>Type</label>
@@ -73,7 +85,11 @@
     <select id="recipe_serving" name="recipe_serving" required>
       <option value="" disabled selected>Choose your option</option>
       {% for serve in serving %}
+      {% if serve.recipe_serving == recipe.recipe_serving %}
+      <option value="{{serve.recipe_serving}}" selected >{{serve.recipe_serving}}</option>
+      {% else %}
       <option value="{{serve.recipe_serving}}">{{serve.recipe_serving}}</option>
+      {% endif %}
       {% endfor %} 
       </select>
     <label>Serving</label>
