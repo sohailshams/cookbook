@@ -4,7 +4,7 @@
 
 <div class="row">
 
-    <form action="{{url_for('insert_recipe')}}" method="POST" class="col s12">
+    <form action="{{url_for('update_recipe', recipe_id=recipe._id)}}" method="POST" class="col s12">
         <div class="row">
             <div class="input-field col s12">
             <i class="material-icons prefix">outdoor_grill</i>
@@ -103,7 +103,7 @@
     </div>
         </div>
         <div class="row">
-        <button class="btn waves-effect waves-light" type="submit" name="action">Add Recipe
+        <button class="btn waves-effect waves-light" type="submit" name="action">Edit Recipe
     <i class="material-icons right">playlist_add</i>
   </button>        
         </div>         
