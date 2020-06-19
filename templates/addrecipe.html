@@ -4,7 +4,7 @@
 
 <div class="row">
 
-    <form action="{{url_for('insert_recipe')}}" method="POST" class="col s12">
+    <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
         <div class="row">
             <div class="input-field col s12">
             <i class="material-icons prefix">outdoor_grill</i>
@@ -37,10 +37,10 @@
         <div class="row">
         <div class="input-field col s12 m6 l3">
         <i class="material-icons prefix">local_dining</i>
-    <select class="recipe_cuisine" id="recipe_cuisine" name="cuisine_name" required>
+    <select class="recipe_cuisine" id="recipe_cuisine" name="recipe_cuisine" required>
       <option value="" disabled selected>Choose your option </option>
       {% for cuisine in cuisines %}
-      <option value="{{cuisine.cuisine_name}}">{{cuisine.cuisine_name}}</option>
+      <option value="{{cuisine.recipe_cuisine}}">{{cuisine.recipe_cuisine}}</option>
       {% endfor %}
     </select>
     <label>Select Cuisine</label>
@@ -61,7 +61,7 @@
         <i class="material-icons prefix">format_list_bulleted</i>
     <select id="recipe_type" name="recipe_type" required>
       <option value="" disabled selected>Choose your option</option>
-      {% for rtype in type %}
+      {% for rtype in recipetype %}
       <option value="{{rtype.recipe_type}}">{{rtype.recipe_type}}</option>
       {% endfor %}  
       </select>
