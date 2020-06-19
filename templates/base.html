@@ -31,24 +31,10 @@
         close: "Ok",
         closeOnSelect: false, // Close upon selecting a date,
       });
-      // Added underline code to make date picker field required
-      // Source https://jsfiddle.net/9e33kq0q/1/
-      function checkDate() {
-	if ($('#recipe_date').val() == '') {
-    $('#recipe_date').addClass('invalid')
-  } else {
-    $('#recipe_date').removeClass('invalid')
-  }
-}
-$('form').submit(function() {
-  checkDate();
-  return false;
-});
-$('#recipe_date').change(function() {
-  checkDate();
-});
-
-	</script>
+       // Added underline code to make date picker field required
+      // source stack overflow
+      $(".datepicker").prop('readonly', false);
+     </script>
 	<script>
 		// Added following code as there is bug in Materialize for datepicker
       document.getElementById("matfix").addEventListener("click", function (e) {
