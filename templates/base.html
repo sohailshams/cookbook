@@ -13,18 +13,18 @@
 <header>
 <nav class=" teal">
     <div class="nav-wrapper">
-      <a href="{{url_for('get_recipes')}}" class="brand-logo">Recipebook</a>
+      <a href="{{url_for('index_recipe')}}" class="brand-logo">Recipebook</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="{{url_for('get_recipes')}}">Home</a></li>
+        <li><a href="{{url_for('index_recipe')}}">Home</a></li>
+        <li><a href="{{url_for('get_recipes')}}">View Recipes</a></li>
         <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
-        <li><a href="#"></a></li>
-      </ul>
+        </ul>
        <ul class="side-nav" id="mobile-demo">
-                    <li><a href="{{url_for('get_recipes')}}">Home</a></li>
-                    <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
-                    <li><a href="#"></a></li>
-                </ul>
+        <li><a href="{{url_for('index_recipe')}}">Home</a></li>
+        <li><a href="{{url_for('get_recipes')}}">View Recipes</a></li>
+        <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
+        </ul>
     </div>
   </nav>
 </header>
