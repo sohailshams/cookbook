@@ -9,3 +9,11 @@
     padding-left: 20px;
     font-size: 15px;
 }
+/*----------------------------Footer */
+.footer{
+    margin-top: 10px;
+}
+.social-links li {
+    display: inline;
+    padding-inline-end: 10px;
+}
