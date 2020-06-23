@@ -57,7 +57,11 @@
 		$(document).ready(function() {
             $('.collapsible').collapsible();
             $('select').material_select(); 
-            $(".button-collapse").sideNav();   
+            $(".button-collapse").sideNav(); 
+            $('.carousel').carousel(); 
+            setInterval(function() {
+             $('.carousel').carousel('next');
+  }, 2000); 
         });
         // Added underline code to show feedback message of required in the select
         //source stack overflow
