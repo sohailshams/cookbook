@@ -32,8 +32,12 @@ def search_recipe():
     cursor = mongo.db.recipe.find({"$text": {"$search": search_recipes}})
     print('cursor')
     recipe = [recipe for recipe in cursor]
-    # send recipes to page
-    return render_template('recipes.html', recipe=recipe, query=search_recipes)
+    if recipe == []:
+        # send recipes to page
+        return render_template('recipes.html', recipe=recipe, query=search_recipes, search=True)
+    else:
+        # send recipes to page
+        return render_template('recipes.html', recipe=recipe, query=search_recipes, search=True)
 
 
 @app.route('/get_recipes')
