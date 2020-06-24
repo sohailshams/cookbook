@@ -1,4 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Krona+One&display=swap');
+.slogan{
+    font-size: 22px;
+    font-family: 'Krona One', sans-serif;
+}
+.text {
+    font-family: 'Balsamiq Sans', sans-serif;
+}
+.slider-text{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+img {
+height: 200px;
 
+}
 .btn_size {
     height: 24px;
     line-height: 24px;  
@@ -16,8 +31,4 @@
 .social-links li {
     display: inline;
     padding-inline-end: 10px;
-}
-
-.slider-text{
-    margin-top: 100px;
 }
