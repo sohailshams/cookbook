@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Krona+One&display=swap');
+.balsamiq {
+    font-family: 'Balsamiq Sans', sans-serif;
+}
 .slogan{
     font-size: 22px;
     font-family: 'Krona One', sans-serif;
@@ -14,6 +17,16 @@ img {
 height: 200px;
 
 }
+/*----------------------------recipe.html */
+.recipe-image{
+    margin-top: 20px;
+    max-height: 300px;
+    width: 100%;
+}
+.no-result{
+    padding-bottom: 20px;
+}
+/*----------------------------*/
 .btn_size {
     height: 24px;
     line-height: 24px;  
@@ -32,3 +45,4 @@ height: 200px;
     display: inline;
     padding-inline-end: 10px;
 }
+
