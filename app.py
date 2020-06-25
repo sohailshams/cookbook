@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+import bcrypt
 
 if os.path.exists("env.py"):
     import env 
@@ -28,17 +29,36 @@ def index_recipe():
 def login():
     if request.method == 'POST':
         users = mongo.db.users
-        login_user = users.find_one({'username' : request.form['username']})
+        login_user = users.find_one({'username': request.form['username']})
         if login_user:
-            if bcrypt.hashpw(request.form['pasword'].encode('utf-8'), 
-                            login_user['password'].encode('utf-8')) == login_user['password'].encode('utf-8'):
+            if bcrypt.hashpw(request.form['pasword'].encode('utf-8'),
+                             login_user['password']) == login_user['password']:
                 session['username'] = request.form['username']
                 flash("You have successfully logged in")
-                return redirect(url_for('index'))
+                return redirect(url_for('index_recipe'))
             flash("Invalid Username or Password. Try again.")
-        flash("Invalid Username or Password. Try again.")    
+        flash("Invalid Username or Password. Try again.")
     return render_template('login.html')
 
+
+@app.route('/register', methods=['POST', 'GET'])
+def register():
+    if request.method == 'POST':
+        users = mongo.db.users
+        existing_user = users.find_one({'username': request.form.get('username')})
+
+        if existing_user is None:
+            hash_password = bcrypt.hashpw(
+                request.form['pasword'].encode('utf-8'), bcrypt.gensalt())
+            users.insert_one({'username': request.form['username'],
+                             'password': hash_password})
+            session['username'] = request.form['username']
+
+            flash('Welcome to Recipebook')
+            return redirect(url_for('index_recipe'))
+
+        flash('That username already exists')
+    return render_template('register.html')
 
 
 @app.route('/search_recipe', methods=['POST'])
