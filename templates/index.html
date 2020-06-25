@@ -18,14 +18,18 @@
       <div class="col s12 m4">
       <h4 class="text">Share your favourite recipes with others.</h4>
       <p class="text">Nothing bring together people like food.</p>
-      <a href="{{url_for('get_recipes')}}" class="waves-effect waves-light btn">View Recipes</a> 
+      {% if 'username' in session %}
+      <a href="{{url_for('add_recipe')}}" class="waves-effect waves-light btn balsamiq">Add Recipe</a>
+      {% else %}
+      <a href="{{url_for('get_recipes')}}" class="waves-effect waves-light btn balsamiq">View Recipes</a>
+      {% endif %}
       <form action="{{url_for('search_recipe')}}" method="POST">
         <div class="input-field">
           <input id="search_recipes" name="search_recipes" type="search" required>
           <label class="label-icon" for="search"><i class="material-icons"></i></label>
           <i class="material-icons">close</i>       
         </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Search
+        <button class="btn waves-effect waves-light balsamiq" type="submit" name="action">Search
       </button>
       </form>  
       </div>
