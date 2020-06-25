@@ -5,6 +5,18 @@
 .krona {
     font-family: 'Krona One', sans-serif;
 }
+/*----------------------------navbar */
+.navbar {
+    min-height: 100px;
+}
+.logo{
+    margin-left: 25px;
+    margin-top: 15px;
+}
+.nav-links {
+    margin-top: 15px;
+}
+
 .slogan{
     font-size: 22px;
     font-family: 'Krona One', sans-serif;
@@ -43,6 +55,7 @@ height: 200px;
 /*----------------------------Footer */
 .footer{
     margin-top: 10px;
+
 }
 .social-links li {
     display: inline;
