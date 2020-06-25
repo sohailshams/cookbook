@@ -61,6 +61,14 @@ def register():
     return render_template('register.html')
 
 
+@app.route('/logout')
+def logout():
+    if 'username' in session:
+        session.pop('username')
+    flash('You have been logged out')
+    return redirect(url_for('index_recipe'))
+
+
 @app.route('/search_recipe', methods=['POST'])
 def search_recipe():
     search_recipes = request.form.get("search_recipes")
