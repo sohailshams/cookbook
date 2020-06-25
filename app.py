@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
@@ -12,6 +12,7 @@ app = Flask(__name__)
 """MongoDB - setting env variables"""
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.config["MONGO_DBNAME"] = 'online_cookbook'
+app.secret_key = os.environ.get("SECRET_KEY")
 
 
 mongo = PyMongo(app)
@@ -21,6 +22,23 @@ mongo = PyMongo(app)
 @app.route('/index_recipe')
 def index_recipe():
     return render_template('index.html')
+
+
+@app.route('/login', methods=['POST', 'GET'])
+def login():
+    if request.method == 'POST':
+        users = mongo.db.users
+        login_user = users.find_one({'username' : request.form['username']})
+        if login_user:
+            if bcrypt.hashpw(request.form['pasword'].encode('utf-8'), 
+                            login_user['password'].encode('utf-8')) == login_user['password'].encode('utf-8'):
+                session['username'] = request.form['username']
+                flash("You have successfully logged in")
+                return redirect(url_for('index'))
+            flash("Invalid Username or Password. Try again.")
+        flash("Invalid Username or Password. Try again.")    
+    return render_template('login.html')
+
 
 
 @app.route('/search_recipe', methods=['POST'])
