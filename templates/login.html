@@ -2,16 +2,16 @@
 {% block content %}
 <h3 class="balsamiq">Login</h3>
 <div class="row">
-    <form class="col s12" method=POST action="{{ url_for('login') }}">
+    <form class="col s12" method="POST" action="{{ url_for('login') }}">
       <div class="row">
         <div class="input-field col s12">
-          <input placeholder="username" name="username" id="user_name" type="text" class="validate">
+          <input placeholder="username" name="username" id="user_name" type="text" class="validate" required>
           <label for="first_name">User Name</label>
         </div>
       </div>
         <div class="row">
         <div class="input-field col s12">
-          <input id="password" name="pasword" type="password" class="validate">
+          <input id="password" name="pasword" type="password" class="validate" required>
           <label for="password">Password</label>
         </div>
       </div>
