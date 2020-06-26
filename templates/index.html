@@ -2,7 +2,11 @@
 {% block content %}
 <div class="row">
 <div class="col s12">
+{% if 'username' in session %}
+<h3 class="heading sub_heading balsamiq">Welcome {{ session['username'] }}</h3>
+{% else %}
 <p class="slogan">A recipe has no soul, you as the cook can bring soul to the recipe.</p>
+{% endif %}
 </div>
 </div>
 
