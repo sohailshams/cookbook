@@ -36,7 +36,7 @@ def login():
                 session['username'] = request.form['username']
                 return redirect(url_for('index_recipe'))
         flash("Invalid username / password. Please try again.")
-    return render_template('login.html')
+    return render_template('login.html', login_page=True)
 
 
 @app.route('/register', methods=['POST', 'GET'])
@@ -55,7 +55,7 @@ def register():
             return redirect(url_for('index_recipe'))
 
         flash('Username already exists')
-    return render_template('register.html')
+    return render_template('register.html', login_page=True)
 
 
 @app.route('/logout')
