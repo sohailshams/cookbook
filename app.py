@@ -88,6 +88,12 @@ def get_recipes():
     return render_template('recipes.html', recipe=mongo.db.recipe.find())
 
 
+@app.route('/my_recipes')
+def my_recipes():
+    return render_template('recipes.html',
+                           recipe=mongo.db.recipe.find({"recipe_author": session["username"]}))
+
+
 @app.route('/add_recipe')
 def add_recipe():
     return render_template('addrecipe.html',
