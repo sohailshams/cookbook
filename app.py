@@ -100,7 +100,19 @@ def add_recipe():
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     recipe = mongo.db.recipe
-    recipe.insert_one(request.form.to_dict())
+    recipe.insert_one(
+        {
+            'recipe_name': request.form.get('recipe_name'),
+            'recipe_cuisine': request.form.get('recipe_cuisine'),
+            'recipe_ingredients': request.form.get('recipe_ingredients'),
+            'recipe_description': request.form.get('recipe_description'),
+            'recipe_preparation': request.form.get('recipe_preparation'),
+            'recipe_date': request.form.get('recipe_date'),
+            'cooking_time': request.form.get('cooking_time'),
+            'recipe_type': request.form.get('recipe_type'),
+            'recipe_serving': request.form.get('recipe_serving'),
+            'recipe_author': session["username"]
+        })
     return redirect(url_for('get_recipes'))
 
 
@@ -128,17 +140,18 @@ def edit_recipe(recipe_id):
 def update_recipe(recipe_id):
     recipe = mongo.db.recipe
     recipe.update({'_id': ObjectId(recipe_id)},
-    {
-        'recipe_name': request.form.get('recipe_name'),
-        'recipe_cuisine': request.form.get('recipe_cuisine'),
-        'recipe_ingredients': request.form.get('recipe_ingredients'),
-        'recipe_description': request.form.get('recipe_description'),
-        'recipe_preparation': request.form.get('recipe_preparation'),
-        'recipe_date': request.form.get('recipe_date'),
-        'cooking_time': request.form.get('cooking_time'),
-        'recipe_type': request.form.get('recipe_type'),
-        'recipe_serving': request.form.get('recipe_serving')
-    })
+        {
+            'recipe_name': request.form.get('recipe_name'),
+            'recipe_cuisine': request.form.get('recipe_cuisine'),
+            'recipe_ingredients': request.form.get('recipe_ingredients'),
+            'recipe_description': request.form.get('recipe_description'),
+            'recipe_preparation': request.form.get('recipe_preparation'),
+            'recipe_date': request.form.get('recipe_date'),
+            'cooking_time': request.form.get('cooking_time'),
+            'recipe_type': request.form.get('recipe_type'),
+            'recipe_serving': request.form.get('recipe_serving'),
+            'recipe_author': session["username"]
+        })
     return redirect(url_for('get_recipes'))
 
 
