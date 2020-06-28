@@ -50,10 +50,8 @@ def register():
             users.insert_one({'username': request.form['username'],
                              'password': hash_password})
             session['username'] = request.form['username']
-
             flash('Welcome to Recipebook')
             return redirect(url_for('index_recipe'))
-
         flash('Username already exists')
     return render_template('register.html', login_page=True)
 
@@ -62,25 +60,18 @@ def register():
 def logout():
     if 'username' in session:
         session.pop('username')
-   # flash('You have been logged out')
     return redirect(url_for('index_recipe'))
 
 
+# Tim from tutor support helped to improve & re-write this function
 @app.route('/search_recipe', methods=['POST'])
 def search_recipe():
     search_recipes = request.form.get("search_recipes")
     #  create the index
     mongo.db.recipe.create_index([("$**", 'text')])
     # search with the search word that came through the form
-    cursor = mongo.db.recipe.find({"$text": {"$search": search_recipes}})
-    print('cursor')
-    recipe = [recipe for recipe in cursor]
-    if recipe == []:
-        # send recipes to page
-        return render_template('recipes.html', recipe=recipe, query=search_recipes, search=True)
-    else:
-        # send recipes to page
-        return render_template('recipes.html', recipe=recipe, query=search_recipes, search=True)
+    recipe = mongo.db.recipe.find({"$text": {"$search": search_recipes}})
+    return render_template('recipes.html', recipe=recipe)
 
 
 @app.route('/get_recipes')
@@ -90,8 +81,8 @@ def get_recipes():
 
 @app.route('/my_recipes')
 def my_recipes():
-    return render_template('recipes.html',
-                           recipe=mongo.db.recipe.find({"recipe_author": session["username"]}))
+    recipe = mongo.db.recipe.find({"recipe_author": session["username"]})
+    return render_template('recipes.html', recipe=recipe)
 
 
 @app.route('/add_recipe')
@@ -103,6 +94,7 @@ def add_recipe():
                            serving=mongo.db.serving.find())
 
 
+# Tim from tutor support helped to improve and re-write this function
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     recipe = mongo.db.recipe
