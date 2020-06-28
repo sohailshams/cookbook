@@ -1,29 +1,44 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <div class="row">
-<div class="col s12">
-<img class="responsive-img recipe-image" src="static/images/recipe.jpg" alt="Recipe Image">
+	<div class="col s12">
+		<img class="responsive-img recipe-image" src="static/images/recipe.jpg" alt="Recipe Image">
+    </div>
 </div>
-</div>
-{% if search%}
-<h4 class="balsamiq">Search Result:</h4>
-{% endif%}
+
+{% if search %}
+    <h4 class="balsamiq">Search Result:</h4>
+{% endif %}
+
+<!-- Tim from tutour support help to improve & re-write this code -->
+
+{% if recipe.count() > 0 %}
+<!-- 'recipe' variable has some results -->
 <ul class="collapsible">
-{% if not recipe %}
-<h4 class="balsamiq center-align no-result">No Recipe Found</h4>
-{% endif%}
-	{% for recipes in recipe %}
-	<li class="balsamiq">
-		<div class="collapsible-header">
-			<div class="col s4">
-            <i class="material-icons">expand_more</i>
-                <a href="{{url_for('view_recipe', recipe_id=recipes._id)}}" class="waves-effect waves-light btn btn_size">View</a>
-			</div>
-			<div class="col s8 recipe_name">
-            <strong>{{recipes.recipe_name}}</strong> - {{recipes.recipe_cuisine}}</div>
-			</div>
-		<div class="collapsible-body"><span>{{recipes.recipe_description}}</span></div>
-	</li>
-	{% endfor %}
+    {% for recipes in recipe %}
+    <!-- loop through each item in 'recipe' variable -->
+    <li class="balsamiq">
+        <div class="collapsible-header">
+            <div class="col s4">
+                <i class="material-icons">expand_more</i>
+                <a href="{{ url_for('view_recipe', recipe_id=recipes._id) }}"
+                    class="waves-effect waves-light btn btn_size">View</a>
+            </div>
+            <div class="col s8 recipe_name">
+                <strong>{{ recipes.recipe_name }}</strong> - {{ recipes.recipe_cuisine }}
+            </div>
+        </div>
+        <div class="collapsible-body">
+            <span>{{ recipes.recipe_description }}</span>
+        </div>
+    </li>
+    {% endfor %}
 </ul>
+
+{% else %}
+<!-- no results in 'recipe' variable -->
+<h4 class="balsamiq center-align no-result">No Recipe Found</h4>
+{% endif %}
+
 {% endblock %}
