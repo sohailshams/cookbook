@@ -68,9 +68,10 @@ height: 200px;
 .social-links{
     padding-top: 20px;
 }
-
+/*-----Following makes footer sticky*/
  body {
     display: flex;
+    min-height: 100vh;
     flex-direction: column;
   }
 
