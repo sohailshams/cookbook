@@ -29,7 +29,7 @@ def index_recipe():
 def login():
     if request.method == 'POST':
         users = mongo.db.users
-        login_user = users.find_one({'username': request.form['username']})
+        login_user = users.find_one({'username': request.form['username'].lower()})
         if login_user:
             if bcrypt.hashpw(request.form['pasword'].encode('utf-8'),
                              login_user['password']) == login_user['password']:
@@ -43,14 +43,13 @@ def login():
 def register():
     if request.method == 'POST':
         users = mongo.db.users
-        existing_user = users.find_one({'username': request.form.get('username')})
+        existing_user = users.find_one({'username': request.form.get('username').lower()})
         if existing_user is None:
             hash_password = bcrypt.hashpw(
                 request.form['pasword'].encode('utf-8'), bcrypt.gensalt())
             users.insert_one({'username': request.form['username'],
                              'password': hash_password})
             session['username'] = request.form['username']
-            flash('Welcome to Recipebook')
             return redirect(url_for('index_recipe'))
         flash('Username already exists')
     return render_template('register.html', login_page=True)
