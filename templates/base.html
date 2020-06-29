@@ -43,16 +43,17 @@
 </header>
 <main>
     <div class="container">
-   {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    {% for message in messages %}
-    <div class="balsamiq teal lighten-5 center-align container"> 
-      <h5>{{message}}</h5>
-    </div>
+    <div class="row flash">
+    <div class="col s12">
+   {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="flash-msg balsamiq teal lighten-5 center-align container alert {{ category }}"> <h5>{{ message|capitalize }}</h5></div>
     {% endfor %}
-    {% endif %}
-    {% endwith %}
-    
+  {% endif %}
+{% endwith %}
+    </div>
+    </div>
 	{% block content %}
     
 	{% endblock %}
@@ -87,6 +88,8 @@
              $('.carousel').carousel('next');
   }, 3000); 
   $('.modal').modal();
+  $('.alert.success').hide().delay(1000).fadeIn(200).delay(4000).fadeOut(200)
+   
         });
         // Added underline code to show feedback message of required in the select
         //source stack overflow
