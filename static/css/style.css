@@ -52,6 +52,9 @@ height: 200px;
     padding-left: 20px;
     font-size: 15px;
 }
+.modal-size {
+    max-width: 450px;
+}
 /*----------------------------Footer */
 .footer{
     margin-top: 10px;
