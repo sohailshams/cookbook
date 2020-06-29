@@ -3,7 +3,7 @@
 <div class="row">
 <div class="col s12">
 {% if 'username' in session %}
-<h3 class="heading sub_heading balsamiq">Welcome {{ session['username'] }}</h3>
+<h4 class="heading sub_heading balsamiq">Welcome {{ session['username'].capitalize() }}</h4>
 {% else %}
 <p class="slogan">A recipe has no soul, you as the cook can bring soul to the recipe.</p>
 {% endif %}
@@ -13,10 +13,19 @@
 <div class="row slider-text">
       <div class="col s12 m8 ">
       <div class="carousel images">
-    <a class="carousel-item responsive-img"><img src="static/images/beryani.jpg" alt="Beryani Rice"></a>
+    <a class="carousel-item responsive-img"><img src="static/images/tikka1.jpg" alt="Chicken Tikka"></a>
     <a class="carousel-item responsive-img"><img src="static/images/garlic.jpg" alt="Garlic Naan"></a>
     <a class="carousel-item responsive-img"><img src="static/images/tandori.jpg" alt="Tandori Chicken"></a>
-    <a class="carousel-item responsive-img"><img src="static/images/tikka.jpg" alt="Chicken Tikka"></a>
+    <a class="carousel-item responsive-img"><img src="static/images/chops.jpg" alt="Lamb Chops"></a>
+    <a class="carousel-item responsive-img"><img src="static/images/brownies.jpg" alt="Brownies"></a>
+    <a class="carousel-item responsive-img"><img src="static/images/cake.jpg" alt="Cake"></a>
+    <a class="carousel-item responsive-img"><img src="static/images/chaey.jpg" alt="Chaey"></a>
+    <a class="carousel-item responsive-img"><img src="static/images/chinese.jpg" alt="Chinese"></a>
+    <a class="carousel-item responsive-img"><img src="static/images/dessert.jpg" alt="Dessert"></a>
+    <a class="carousel-item responsive-img"><img src="static/images/italian.jpg" alt="Italian Food"></a>
+    <a class="carousel-item responsive-img"><img src="static/images/kebab.jpg" alt="Kebab"></a>
+    <a class="carousel-item responsive-img"><img src="static/images/samosa.png" alt="Samosa"></a>
+    
     </div>
       </div>
       <div class="col s12 m4">
