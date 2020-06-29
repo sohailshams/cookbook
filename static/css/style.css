@@ -41,7 +41,15 @@ height: 200px;
 .no-result{
     padding-bottom: 20px;
 }
-/*----------------------------*/
+/*----------------------------flash message*/
+.flash-msg {
+    position: absolute;
+    z-index: -1;
+}
+.flash {
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
 .btn_size {
     height: 24px;
     line-height: 24px;  
