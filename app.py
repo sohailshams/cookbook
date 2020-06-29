@@ -111,6 +111,7 @@ def insert_recipe():
             'recipe_serving': request.form.get('recipe_serving'),
             'recipe_author': session["username"]
         })
+    flash('Recipe Successfully Added', 'success')
     return redirect(url_for('get_recipes'))
 
 
@@ -150,12 +151,14 @@ def update_recipe(recipe_id):
             'recipe_serving': request.form.get('recipe_serving'),
             'recipe_author': session["username"]
         })
+    flash('Recipe Successfully Updated', 'success')
     return redirect(url_for('get_recipes'))
 
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     mongo.db.recipe.remove({'_id': ObjectId(recipe_id)})
+    flash('Recipe Successfully Deleted', 'success')
     return redirect(url_for('get_recipes'))
 
 
