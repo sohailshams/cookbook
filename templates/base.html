@@ -1,119 +1,123 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-		type="text/css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
-</head>
-
-<body>
-<header>
-<nav class=" teal krona navbar">
-    <div class="nav-wrapper">
-      <a href="{{url_for('index_recipe')}}" class="brand-logo logo">Recipebook</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down nav-links">
-        {% if login_page is not defined %}
-        <li><a href="{{url_for('index_recipe')}}">Home</a></li>
-        <li><a href="{{url_for('get_recipes')}}">View Recipes</a></li>
-        {% if 'username' in session %}
-        <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
-        <li><a href="{{url_for('my_recipes')}}">My Recipes</a></li>
-        <li><a href="{{url_for('logout')}}">Logout</a></li>
-        {% else %}
-        <li><a href="{{url_for('login')}}">Log In</a></li>
-        {% endif %}
-        </ul>
-       <ul class="side-nav" id="mobile-demo">
-        <li><a href="{{url_for('index_recipe')}}">Home</a></li>
-        <li><a href="{{url_for('get_recipes')}}">View Recipes</a></li>
-        {% if 'username' in session %}
-        <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
-        <li><a href="{{url_for('my_recipes')}}">My Recipe</a></li>
-        <li><a href="{{url_for('logout')}}">Logout</a></li>
-        {% else %}
-        <li><a href="{{url_for('login')}}">Log In</a></li>
-        {% endif %}
-        {% endif %}
-        
-        </ul>
-    </div>
-  </nav>
-</header>
-<main>
-    <div class="container">
-    <div class="row flash">
-    <div class="col s12">
-   {% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
-    {% for category, message in messages %}
-      <div class="flash-msg balsamiq teal lighten-5 center-align container alert {{ category }}"> <h5>{{ message|capitalize }}</h5></div>
-    {% endfor %}
-  {% endif %}
-{% endwith %}
-    </div>
-    </div>
-	{% block content %}
-    
-	{% endblock %}
-    </div>
-    </main>
-<footer class="teal footer">
-          <div class="container">
-    <div class="row center-align">
-        <div class="col s12 m6">
-            <p class="white-text footer-text krona"> Created with love and passion © 2020 MSS</p>
-        </div>
-        <div class="col s12 m6">
-        <ul class="social-links">
-            <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/muhammad-sohail-shams-56995126/" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i><span class="sr-only">Linkedin</span></a></li>
-            <li><a class="grey-text text-lighten-3" href="https://github.com/sohailshams" target="_blank"><i class="fa fa-github-square" aria-hidden="true"></i><span class="sr-only">Github</span></a></li>
-        </ul>
-        </div>
-    </div>
-</div>
-
-</footer>
-   
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-            $('.collapsible').collapsible();
-            $('select').material_select(); 
-            $(".button-collapse").sideNav(); 
-            $('.carousel').carousel(); 
-            setInterval(function() {
-             $('.carousel').carousel('next');
-  }, 3000); 
-  $('.modal').modal();
-  $('.alert.success').hide().delay(1000).fadeIn(200).delay(4000).fadeOut(200)
-   
-        });
-        // Added underline code to show feedback message of required in the select
-        //source stack overflow
-        $("select[required]").css({display: "block", height: 0, padding: 0, width: 0, position: 'absolute'});
-        $(".datepicker").pickadate({
-        selectMonths: true, // Creates a dropdown to control month
-        selectYears: 15, // Creates a dropdown of 15 years to control year,
-        today: "Today",
-        clear: "Clear",
-        close: "Ok",
-        closeOnSelect: false, // Close upon selecting a date,
-      });
-       // Added underline code to make date picker field required
-      // source stack overflow
-      $(".datepicker").prop('readonly', false);
-     </script>
-	<script>
-		// Added following code as there is bug in Materialize for datepicker
-      document.getElementById("matfix").addEventListener("click", function (e) {
-        e.stopPropagation();
-      });
-	</script>
-</body>
-
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Recipebook</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+    </head>
+    <body>
+        <header>
+            <nav class="teal krona navbar">
+                <div class="nav-wrapper">
+                    <a href="{{url_for('index_recipe')}}" class="brand-logo logo">Recipebook</a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down nav-links">
+                        {% if login_page is not defined %}
+                        <li><a href="{{url_for('index_recipe')}}">Home</a></li>
+                        <li><a href="{{url_for('get_recipes')}}">All Recipes</a></li>
+                        {% if 'username' in session %}
+                        <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
+                        <li><a href="{{url_for('my_recipes')}}">My Recipes</a></li>
+                        <li><a href="{{url_for('logout')}}">Logout</a></li>
+                        {% else %}
+                        <li><a href="{{url_for('login')}}">Log In</a></li>
+                        {% endif %}
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><a href="{{url_for('index_recipe')}}">Home</a></li>
+                        <li><a href="{{url_for('get_recipes')}}">All Recipes</a></li>
+                        {% if 'username' in session %}
+                        <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
+                        <li><a href="{{url_for('my_recipes')}}">My Recipe</a></li>
+                        <li><a href="{{url_for('logout')}}">Logout</a></li>
+                        {% else %}
+                        <li><a href="{{url_for('login')}}">Log In</a></li>
+                        {% endif %} {% endif %}
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="container">
+                <div class="row flash">
+                    <div class="col s12">
+                        {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+                        <div class="flash-msg balsamiq teal lighten-5 center-align container alert {{ category }}">
+                            <h5>{{ message|capitalize }}</h5>
+                        </div>
+                        {% endfor %} {% endif %} {% endwith %}
+                    </div>
+                </div>
+                {% block content %} {% endblock %}
+            </div>
+        </main>
+        <footer class="teal footer">
+            <div class="container">
+                <div class="row center-align">
+                    <div class="col s12 m6">
+                        <p class="white-text footer-text krona">
+                            Created with love and passion © 2020 MSS
+                        </p>
+                    </div>
+                    <div class="col s12 m6">
+                        <ul class="social-links">
+                            <li>
+                                <a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/muhammad-sohail-shams-56995126/" target="_blank">
+                                    <i class="fa fa-linkedin-square" aria-hidden="true"></i><span class="sr-only">Linkedin</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="grey-text text-lighten-3" href="https://github.com/sohailshams" target="_blank"><i class="fa fa-github-square" aria-hidden="true"></i><span class="sr-only">Github</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".collapsible").collapsible();
+                $("select").material_select();
+                $(".button-collapse").sideNav();
+                $(".carousel").carousel();
+                setInterval(function () {
+                    $(".carousel").carousel("next");
+                }, 3000);
+                $(".modal").modal();
+                $(".alert.success").hide().delay(1000).fadeIn(200).delay(4000).fadeOut(200);
+            });
+            // Added underline code to show feedback message of required in the select
+            //source stack overflow
+            $("select[required]").css({
+                display: "block",
+                height: 0,
+                padding: 0,
+                width: 0,
+                position: "absolute",
+            });
+            $(".datepicker").pickadate({
+                selectMonths: true, // Creates a dropdown to control month
+                selectYears: 15, // Creates a dropdown of 15 years to control year,
+                today: "Today",
+                clear: "Clear",
+                close: "Ok",
+                closeOnSelect: false, // Close upon selecting a date,
+            });
+            // Added underline code to make date picker field required
+            // source stack overflow
+            $(".datepicker").prop("readonly", false);
+        </script>
+        <script>
+            // Added following code as there is bug in Materialize for datepicker
+            document.getElementById("matfix").addEventListener("click", function (e) {
+                e.stopPropagation();
+            });
+        </script>
+    </body>
 </html>
