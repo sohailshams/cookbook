@@ -35,8 +35,7 @@
         {% endif %}
         <form action="{{url_for('search_recipe')}}" method="POST">
             <div class="input-field">
-                <input id="search_recipes" name="search_recipes" type="search" required />
-                <label class="label-icon" for="search"><i class="material-icons"></i></label>
+                <input class="balsamiq" id="search_recipes" name="search_recipes" placeholder="Search" type="search" required />   
                 <i class="material-icons">close</i>
             </div>
             <button class="btn waves-effect waves-light balsamiq" type="submit" name="action">Search</button>
