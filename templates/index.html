@@ -1,50 +1,46 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <div class="row">
-<div class="col s12">
-{% if 'username' in session %}
-<h4 class="heading sub_heading balsamiq">Welcome {{ session['username'].capitalize() }}</h4>
-{% else %}
-<p class="slogan">A recipe has no soul, you as the cook can bring soul to the recipe.</p>
-{% endif %}
-</div>
-</div>
-
-<div class="row slider-text">
-      <div class="col s12 m8 ">
-      <div class="carousel images">
-    <a class="carousel-item responsive-img"><img src="static/images/tikka1.jpg" alt="Chicken Tikka"></a>
-    <a class="carousel-item responsive-img"><img src="static/images/garlic.jpg" alt="Garlic Naan"></a>
-    <a class="carousel-item responsive-img"><img src="static/images/tandori.jpg" alt="Tandori Chicken"></a>
-    <a class="carousel-item responsive-img"><img src="static/images/chops.jpg" alt="Lamb Chops"></a>
-    <a class="carousel-item responsive-img"><img src="static/images/brownies.jpg" alt="Brownies"></a>
-    <a class="carousel-item responsive-img"><img src="static/images/cake.jpg" alt="Cake"></a>
-    <a class="carousel-item responsive-img"><img src="static/images/chaey.jpg" alt="Chaey"></a>
-    <a class="carousel-item responsive-img"><img src="static/images/chinese.jpg" alt="Chinese"></a>
-    <a class="carousel-item responsive-img"><img src="static/images/dessert.jpg" alt="Dessert"></a>
-    <a class="carousel-item responsive-img"><img src="static/images/italian.jpg" alt="Italian Food"></a>
-    <a class="carousel-item responsive-img"><img src="static/images/kebab.jpg" alt="Kebab"></a>
-    <a class="carousel-item responsive-img"><img src="static/images/samosa.png" alt="Samosa"></a>
-    
+    <div class="col s12">
+        {% if 'username' in session %}
+        <h4 class="heading sub_heading balsamiq">Welcome {{ session['username'].capitalize() }}</h4>
+        {% else %}
+        <p class="slogan">A recipe has no soul, you as the cook can bring soul to the recipe.</p>
+        {% endif %}
     </div>
-      </div>
-      <div class="col s12 m4">
-      <h4 class="text">Share your favourite recipes with others.</h4>
-      <p class="text">Nothing bring together people like food.</p>
-      {% if 'username' in session %}
-      <a href="{{url_for('add_recipe')}}" class="waves-effect waves-light btn balsamiq">Add Recipe</a>
-      {% else %}
-      <a href="{{url_for('get_recipes')}}" class="waves-effect waves-light btn balsamiq">View Recipes</a>
-      {% endif %}
-      <form action="{{url_for('search_recipe')}}" method="POST">
-        <div class="input-field">
-          <input id="search_recipes" name="search_recipes" type="search" required>
-          <label class="label-icon" for="search"><i class="material-icons"></i></label>
-          <i class="material-icons">close</i>       
+</div>
+<div class="row slider-text">
+    <div class="col s12 m8">
+        <div class="carousel images">
+            <a class="carousel-item responsive-img"><img src="static/images/tikka1.jpg" alt="Chicken Tikka" /></a>
+            <a class="carousel-item responsive-img"><img src="static/images/garlic.jpg" alt="Garlic Naan" /></a>
+            <a class="carousel-item responsive-img"><img src="static/images/tandori.jpg" alt="Tandori Chicken" /></a>
+            <a class="carousel-item responsive-img"><img src="static/images/chops.jpg" alt="Lamb Chops" /></a>
+            <a class="carousel-item responsive-img"><img src="static/images/brownies.jpg" alt="Brownies" /></a>
+            <a class="carousel-item responsive-img"><img src="static/images/cake.jpg" alt="Cake" /></a>
+            <a class="carousel-item responsive-img"><img src="static/images/chaey.jpg" alt="Chaey" /></a>
+            <a class="carousel-item responsive-img"><img src="static/images/chinese.jpg" alt="Chinese" /></a>
+            <a class="carousel-item responsive-img"><img src="static/images/dessert.jpg" alt="Dessert" /></a>
+            <a class="carousel-item responsive-img"><img src="static/images/italian.jpg" alt="Italian Food" /></a>
+            <a class="carousel-item responsive-img"><img src="static/images/kebab.jpg" alt="Kebab" /></a>
+            <a class="carousel-item responsive-img"><img src="static/images/samosa.png" alt="Samosa" /></a>
         </div>
-        <button class="btn waves-effect waves-light balsamiq" type="submit" name="action">Search
-      </button>
-      </form>  
-      </div>
-    </div> 
- {% endblock %}
+    </div>
+    <div class="col s12 m4">
+        <h4 class="text">Share your favourite recipes with others.</h4>
+        <p class="text">Nothing bring together people like food.</p>
+        {% if 'username' in session %}
+        <a href="{{url_for('add_recipe')}}" class="waves-effect waves-light btn balsamiq">Add Recipe</a>
+        {% else %}
+        <a href="{{url_for('get_recipes')}}" class="waves-effect waves-light btn balsamiq">All Recipes</a>
+        {% endif %}
+        <form action="{{url_for('search_recipe')}}" method="POST">
+            <div class="input-field">
+                <input id="search_recipes" name="search_recipes" type="search" required />
+                <label class="label-icon" for="search"><i class="material-icons"></i></label>
+                <i class="material-icons">close</i>
+            </div>
+            <button class="btn waves-effect waves-light balsamiq" type="submit" name="action">Search</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
