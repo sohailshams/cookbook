@@ -27,7 +27,7 @@ and has the possibility of add, update or delete his/her own recipes.
  The website design is simple and responsive which allows the user to perform easily theCRUD functionality. The design 
  inspiration is taken from the **Code Institute's Task Manager Mini Project**.
 
-### Fonts
+#### Fonts
 
 1. Google fonts **Krona One** is used in navbar and footer. 
 2. Where as **Balsamiq Sans** is used in the body. 
@@ -51,9 +51,8 @@ like on different mobile screen size.
 - [Link to Wireframes](https://balsamiq.cloud/sfyoi6/p2i2t4h/r2278) 
 - [Wireframes in PDF](static/wireframes/recipebook.pdf)
 
+## Database Schema
 
-
-
-
-
+NoSql MONGODB is used to store data at the backend. Database schema is designed for various collections before buiding the project. 
+- [Collections Schema in PDF](static/collections/collections.pdf)
 
