@@ -76,7 +76,7 @@ height: 200px;
 .social-links{
     padding-top: 20px;
 }
-/*-----Following makes footer sticky*/
+/*-----Following code makes footer sticky*/
  body {
     display: flex;
     min-height: 100vh;
@@ -88,4 +88,9 @@ height: 200px;
   }
 .footer-text{
     padding-top: 20px;
+}
+@media screen and (max-width: 550px) {
+  .login-heading {
+    padding-top: 45px;
+  }
 }
