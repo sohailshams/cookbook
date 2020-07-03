@@ -16,11 +16,16 @@ and has the possibility of add, update or delete his/her own recipes.
 
  ### User Stories
 
- 1. As a user I want to see a list / catalogue of recipes.
- 2. As a user I want to search for recipes so that I can find easily and quickly.
- 3. AS a user I want to store  and share my recipes online with others.
- 4. As a user I want to update my existing recipes. 
- 5. As a user I want to delete my existing recipes.
+ 1. As a user, I want to see a list / catalogue of recipes.
+ 2. As a user, I want to search for recipes so that I can find easily and quickly.
+ 3. As a user, I want to be able to create an account.
+ 4. As a user, I want to be able to login to my account.
+ 5. AS a user, I want to store/add  and share my recipes online with others.
+ 6. As a user, I want to see a list of my own recipes.
+ 7. As a user, I want to see the details of the recipe.
+ 8. As a user, I want to update my existing recipes. 
+ 9. As a user, I want to delete my existing recipes.
+ 10. As a user, I want to end the session.
 
  ## Design
 
@@ -113,6 +118,75 @@ page 3 etc.
 - **[Google Fonts](https://fonts.google.com/)** - Google fonts *Balsamiq Sans* and *Krona One* are used in the project.
 - **[Git & Github](https://github.com/)** - Used for version control.
 - **[Git & Github](https://www.heroku.com/#)** - It is used as hosting platform to deploy the project.
+
+## Testing
+
+### User Stories
+User stories from the UX section were tested to see if they all work as intended. 
+- *As a user, I want to see a list / catalogue of recipes.*
+1. Go to the **Home** Page.
+2. Click on **All Recipes** button in the navbar or on **All Recipes** beside image slider.
+3. A list of recipes will be displayed.
+- *As a user, I want to search for recipes so that I can find easily and quickly.*
+1. Go to the **Home** Page
+2. Go to the search bar beside the image slider and write any key word to search for the recipe.
+3. Click on the **Search** button.
+4. A list of recipes will be displayed.
+5. If no recipe found then a **No Recipe Found** will be displayed.
+- *As a user, I want to be able to create an account.*
+1. Go to the **Home** Page.
+2. Click on **log In** button AND then **Sign Up** button.
+3. Fill in username, password and click on **Sign Up** button.
+4. If username does not exist already then a user account will be created and user will be redirected to **Home** page.
+5. If user already exist then user will get a message that **User already exists.**
+- *As a user, I want to be able to login to my account.*
+1. Go to the **Home** Page.
+2. Click on **log In** button.
+3. Fill in username, password and click on **Log In** button.
+4. If username and password are correct then user will be redirected to the **Home** Page.
+5. If username and password does not match then **Invalid username/password** message will be displayed.
+- *AS a user, I want to store/add  and share my recipes online with others.*
+1. Go to the **Home** Page.
+2. Click on **log In** button.
+3. Fill in username, password and **Log In**.
+4. Click on **Add Recipe** and fill out the **Add Recipe** form. All fields are required to fill in.
+5.  Click on **Add Recipe** button. A confirmation message **Recipe successfully Added** will be displayed and user will 
+be redirected to the list of all recipes.
+- *As a user, I want to see a list of my own recipes.*
+1. Go to the **Home** Page.
+2. Click on **log In** button.
+3. Fill in username, password and **Log In**.
+4. Click on **My Recipes** button.
+5. User will be redirected to list of user's own recipes. 
+- *As a user, I want to see the details of the recipe.*
+1. Find the recipe either by using **Search bar** or from list **All Recipes** or from list of **My Recipes**.
+2. Click on the **View** button.
+3. Recipe details will be shown.
+- *As a user, I want to update my existing recipes.*
+1. Go to the **Home** Page.
+2. Click on **log In** button.
+3. Fill in username, password and **Log In**.
+4. Click on **My Recipes** button and choose the recipe form the list to update.(**User can only update or delete his own recipes**)
+5. Click on the **View** button and the recipe details will be displayed.
+6. Click on the **Edit** button and recipe details will open in a editable form.
+7. Edit the required field and click on update. A conformation message **Recipe successfully updated** will be displayed.
+8. If user want to cancel the update and return to the previous page then click on **Cancel** button.
+- *As a user, I want to delete my existing recipes.*
+1. Go to the **Home** Page.
+2. Click on **log In** button.
+3. Fill in username, password and **Log In**.
+4. Click on **My Recipes** button and choose the recipe form the list to update.(**User can only update or delete his own recipes**)
+5. Click on the **View** button and the recipe details will be displayed.
+6. Click on the **Delete** button and a pop up window will appear to confirm the deletion.
+7. Click **yes** to confirm and a confirmation message **Recipe successfully deleted** will be displayed.
+8. Click **No** to get back to same page agian.
+- *As a user, I want to end the session.*
+1. Click on the **Logout** button to end the session.
+
+
+
+
+
 
 
 
