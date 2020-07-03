@@ -50,6 +50,7 @@ height: 200px;
     padding-top: 15px;
     padding-bottom: 30px;
 }
+/*----------------------------recipe.html*/
 .btn_size {
     height: 24px;
     line-height: 24px;  
@@ -60,6 +61,7 @@ height: 200px;
     padding-left: 20px;
     font-size: 15px;
 }
+/*----------------------------viewrecipe.html*/
 .modal-size {
     max-width: 450px;
 }
@@ -89,6 +91,7 @@ height: 200px;
 .footer-text{
     padding-top: 20px;
 }
+/*----------------------------media query*/
 @media screen and (max-width: 550px) {
   .login-heading {
     padding-top: 45px;
