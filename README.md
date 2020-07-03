@@ -97,6 +97,22 @@ page 3 etc.
 - **Recipe Image** - To make recipe visually appealing, recipe image addition option will also be added.
 - **Sort** - Sorting recipes accending or decending order feature will also be added in future.
 
+## Technologies Used
+
+- **HTML5**
+- **CSS3** - CSS3 is used for custome styling the elements. 
+- **JavaScript** - JavaScript function is used to overcome the bug in the datepicker.
+- **JQuery** - Jquery is used to initialize the Materialize components.
+- **[Materialize Framework](https://materializecss.com/)** - Materialize front-end framework is used to make website responsive.
+- **[Python](https://www.python.org/)** - Python is used as the back-end programming language.
+- **[Flask](https://flask.palletsprojects.com/en/1.1.x/)** - Python microframework Flask is used to create this project.
+- **[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)** - Jinja templating language is used with Flask in the HTML code.
+- **[Balsamiq](https://balsamiq.com/)** - Balsamiq is used to create wireframes for the project.
+- **[PyMongo](https://pymongo.readthedocs.io/en/stable/)** -  It is a Python distribution that contains tools to work with MongoDB.
+- **[MongoDB](https://www.mongodb.com/)** - It is a NoSql database that is use to store data at the backend.
+- **[Google Fonts](https://fonts.google.com/)** - Google fonts *Balsamiq Sans* and *Krona One* are used in the project.
+- **[Git & Github](https://github.com/)** - Used for version control.
+- **[Git & Github](https://www.heroku.com/#)** - It is used as hosting platform to deploy the project.
 
 
 
