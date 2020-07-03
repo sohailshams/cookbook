@@ -96,4 +96,8 @@ height: 200px;
   .login-heading {
     padding-top: 45px;
   }
+  
+  .btn-text{
+      font-size: 12px;
+  }
 }
