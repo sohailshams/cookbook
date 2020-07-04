@@ -1,11 +1,13 @@
 import os
-from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask import (
+    Flask, render_template, request,
+    redirect, url_for, session, flash)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 import bcrypt
 
 if os.path.exists("env.py"):
-    import env 
+    import env
 
 
 app = Flask(__name__)
@@ -29,7 +31,8 @@ def index_recipe():
 def login():
     if request.method == 'POST':
         users = mongo.db.users
-        login_user = users.find_one({'username': request.form['username'].lower()})
+        login_user = users.find_one({'username':
+                                    request.form['username'].lower()})
         if login_user:
             if bcrypt.hashpw(request.form['pasword'].encode('utf-8'),
                              login_user['password']) == login_user['password']:
@@ -43,7 +46,8 @@ def login():
 def register():
     if request.method == 'POST':
         users = mongo.db.users
-        existing_user = users.find_one({'username': request.form.get('username').lower()})
+        existing_user = users.find_one({'username':
+                                        request.form.get('username').lower()})
         if existing_user is None:
             hash_password = bcrypt.hashpw(
                 request.form['pasword'].encode('utf-8'), bcrypt.gensalt())
@@ -138,7 +142,7 @@ def edit_recipe(recipe_id):
 def update_recipe(recipe_id):
     recipe = mongo.db.recipe
     recipe.update({'_id': ObjectId(recipe_id)},
-        {
+                  {
             'recipe_name': request.form.get('recipe_name'),
             'recipe_cuisine': request.form.get('recipe_cuisine'),
             'recipe_ingredients': request.form.get('recipe_ingredients'),
