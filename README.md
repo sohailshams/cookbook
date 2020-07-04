@@ -208,7 +208,7 @@ The code has been validated by using;
 ### Interesting Bugs / Issue
 
 1. **Add Recipe function stopped working** - I encountered a very interesting bug when I made my datepicker filed a required 
-field. I also wanted to show a feedback message to the user. To achieve this, I added a **JavaScript** function which I from **Stack overflow**. 
+field. I also wanted to show a feedback message to the user. To achieve this, I added a **JavaScript** function which I took from **Stack overflow**. 
 But later I realized that **Add Recipe** function is not working. Since I used **Git** version control so I start going back to
 the previous versions of my project to find out after which commit **Add Recipe** button stopped working. At last I found out
 that its the **JavaScript** function that is causing this issue. So I replaced it with a **JQuery code** and solved this issue.
@@ -216,7 +216,9 @@ that its the **JavaScript** function that is causing this issue. So I replaced i
 in the beginning this message has been also displayed in **All recipes**. To overcome this issue I need to amend my **Search Recipe**
 function and **My Recipes** function togeather with if statement in recipes.html. Credit goes to Tim who helped me to fix this issue.
 3. **Flash Messages** - Flash messages were not appearing after a delay of few seconds on **Adding Recipe**, **Updating Recipe**
-and **Deleting Recipe** I realized later that first I need to hide it first then delay and it worked.
+and **Deleting Recipe** I realized later that, I need to hide it first then delay and it worked.
+4. **Carousel** - I found out that if user keep click on or on touch screen keep pressing the **Carousel (Image Slider)**
+then the images starts flashing. I did not tried to fix it and it remains there.
 
 
 
