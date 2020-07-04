@@ -40,7 +40,7 @@ and has the possibility of add, update or delete his/her own recipes.
 #### Attribute
 
 1. The target_blank value is given to the social links in the footer so that they will open in a new tab / window on click.
-2. The required attribute is used in the search field, login form, sign up form, add recipe form and edit recipe form so that user 
+2. The required attribute is used in the **Search bar**, **Log In form**, **Sign Up form**, **Add Recipe form** and **Edit Recipe form** so that user 
 fill in all the fiels before performing the respective action.
 
 #### Hover Effect
@@ -121,6 +121,10 @@ page 3 etc.
 
 ## Testing
 
+Google developers tool has been used to test the project constantly form the  beginning to identify any error or to see 
+how the changes looks like on different screen sizes. I created my on account and tested all the functions to make sure 
+they work properly. In addition, I aslo asked my family, friends and slack community to test the project and give there feedback.
+
 ### User Stories
 User stories from the UX section were tested to see if they all work as intended. 
 - *As a user, I want to see a list / catalogue of recipes.*
@@ -182,6 +186,24 @@ be redirected to the list of all recipes.
 8. Click **No** to get back to same page agian.
 - *As a user, I want to end the session.*
 1. Click on the **Logout** button to end the session.
+
+### Responsiveness on different browsers & Mobiles
+
+The website looks fine and work properly on following web browsers and mobiles when tested on them.
+- Google Chroome
+- Microsoft Edge
+- firefox
+- Opera 
+- iPhone 6
+- Huawei P30 lite
+
+### Code Validation
+
+The code has been validated by using;
+
+- [W3C Markup Validation Service for HTML](https://validator.w3.org/)
+- [W3C Markup Validation Service for CSS](https://jigsaw.w3.org/css-validator/)
+- [Pep8 Online for Pyhton](http://pep8online.com/)
 
 
 
