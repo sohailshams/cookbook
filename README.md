@@ -220,6 +220,26 @@ and **Deleting Recipe** I realized later that, I need to hide it first then dela
 4. **Carousel** - I found out that if user keep click on or on touch screen keep pressing the **Carousel (Image Slider)**
 then the images starts flashing. I did not tried to fix it and it remains there.
 
+## Deployment to Heroku
+1. Login to **[Heroko](https://www.heroku.com/)** account.
+2. Click on **New** at the right top corner and click on **Create new app**.
+3. Choose **App name** and a **region**. Then click on **Create app**.
+4. Go to terminal window and create **requirements.txt** by running command **pip3 freeze --local > requirements.txt**
+5. Then create **Procfile** by running command **echo web: python app.py > Procfile** **Remember P is capital**
+6. Add these files to stagging area by running command **git add requirements.txt** & **git add Procfile**.
+7. Then commit these file respectively by running command **git commit -m "Added requirements.txt** & **git commit -m "Added Procfile**.
+8. Then push these files to **github** by running command **git push**
+9. Go back to **Heroku** to your **App** and click on **Deploy** tab. 
+10. Then go to **Deployment Method** and click on **Github Connect to Github**.
+11. Then make sure your **Github Profile** is displayed and add you **repository name** and click on **Search**.
+12. Once it find your repository then click on **Connect**.
+13. Now go to **Settings** at the top. Then click on **Reveal Config Vars**.
+14. In **Config Vars** add **IP** with value **0.0.0.0** then add **PORT** as **5000** then add **SECRET_KEY** then add **MONGO_URI** and then add **MONGO_DBNAME** which is the name of database.
+15. Now go back to **Deploy** tab and click on **Enable Automatic Deploys**.
+16. Now click on **Deploy Branch**
+17. It will take a minute and display a message that **Your app was successfully deployed**.
+18. Click on **View** to launch your deployed app.
+
 
 
 
