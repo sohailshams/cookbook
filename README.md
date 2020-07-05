@@ -252,6 +252,28 @@ then the images starts flashing. I did not tried to fix it and it remains there.
 7. Create env.py file and add **MONGO_URI** and **SECRET_KEY**. 
 8. Now run the app by running code **python3 app.py**
 
+## Credits
+### Content
+
+- Cheese Cake recipe has been taken from  [Joy of Baking](https://www.joyofbaking.com/)
+
+### Media
+
+- The pictures in the Carousel(image slider) been taken from [Google](https://www.google.com/)
+
+### Acknowledgements
+1. Code Institute's **Task Manager Application** was great source of inspiration. I follow it to design and develop my **Recipebook** website.
+2. Code for **Login System** is taken from [Pretty Printed](https://www.youtube.com/watch?v=vVx1737auSE)
+3. Code Institute's tutor support has been a great help during the whole project, a very special thanks to tutor support team, specially Tim.
+4. The project is based on **Materialize**, so the code is taken from [Materialize](https://materializecss.com/)
+4. A special thanks to my mentor **Ashish Srivastava** for his valuable feedback during mentoring sessions. 
+5. Besides tutor support [Stack overflow](https://stackoverflow.com/) was great source of help.
+6. I would like thank my lovely wife, my sons Ibrahim and Ismail for their support and motivation.
+7. I would like to thank Elliot Redhead for his valuable feedback and help.
+
+## Disclaimer
+This project is for educational purposes only.
+
 
 
 
