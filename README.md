@@ -221,6 +221,7 @@ and **Deleting Recipe** I realized later that, I need to hide it first then dela
 then the images starts flashing. I did not tried to fix it and it remains there.
 
 ## Deployment to Heroku
+
 1. Login to **[Heroko](https://www.heroku.com/)** account.
 2. Click on **New** at the right top corner and click on **Create new app**.
 3. Choose **App name** and a **region**. Then click on **Create app**.
@@ -239,6 +240,17 @@ then the images starts flashing. I did not tried to fix it and it remains there.
 16. Now click on **Deploy Branch**
 17. It will take a minute and display a message that **Your app was successfully deployed**.
 18. Click on **View** to launch your deployed app.
+
+## Local Deployment
+
+1. Go to [Recipebook Github Repository](https://github.com/sohailshams/cookbook)
+2. Click on **Code** beside **Gitpod**. 
+3. A drop down menu open then click on **Download Zip**
+4. Unzip the downloaded zip file.
+5. Open app.py file and install requirements.txt by running comman **pip3 install -r requirements.txt**.
+6. Create a database in **MONGODB** following this scheme - [Collections Schema in PDF](static/collections/collections.pdf)
+7. Create env.py file and add **MONGO_URI** and **SECRET_KEY**. 
+8. Now run the app by running code **python3 app.py**
 
 
 
