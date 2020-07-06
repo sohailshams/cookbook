@@ -17,27 +17,50 @@
                     {% if login_page is not defined %}
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down nav-links">
-                        
-                        <li><a href="{{url_for('index_recipe')}}">Home</a></li>
-                        <li><a href="{{url_for('get_recipes')}}">All Recipes</a></li>
+                        <li>
+                            <a href="{{url_for('index_recipe')}}">Home<i class="material-icons left">home</i></a>
+                        </li>
+                        <li>
+                            <a href="{{url_for('get_recipes')}}">All Recipes<i class="material-icons left">sort</i></a>
+                        </li>
                         {% if 'username' in session %}
-                        <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
-                        <li><a href="{{url_for('my_recipes')}}">My Recipes</a></li>
-                        <li><a href="{{url_for('logout')}}">Logout</a></li>
+                        <li>
+                            <a href="{{url_for('add_recipe')}}">Add Recipe<i class="material-icons left">playlist_add</i></a>
+                        </li>
+                        <li>
+                            <a href="{{url_for('my_recipes')}}">My Recipes<i class="material-icons left">supervisor_account</i></a>
+                        </li>
+                        <li>
+                            <a href="{{url_for('logout')}}">Logout<i class="material-icons left">close</i></a>
+                        </li>
                         {% else %}
-                        <li><a href="{{url_for('login')}}">Log In</a></li>
+                        <li>
+                            <a href="{{url_for('login')}}">Log In<i class="material-icons left">login</i></a>
+                        </li>
                         {% endif %}
                     </ul>
                     <ul class="side-nav" id="mobile-demo">
-                        <li><a href="{{url_for('index_recipe')}}">Home</a></li>
-                        <li><a href="{{url_for('get_recipes')}}">All Recipes</a></li>
+                        <li>
+                            <a href="{{url_for('index_recipe')}}">Home<i class="material-icons left">home</i></a>
+                        </li>
+                        <li>
+                            <a href="{{url_for('get_recipes')}}">All Recipes<i class="material-icons left">sort</i></a>
+                        </li>
                         {% if 'username' in session %}
-                        <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
-                        <li><a href="{{url_for('my_recipes')}}">My Recipe</a></li>
-                        <li><a href="{{url_for('logout')}}">Logout</a></li>
+                        <li>
+                            <a href="{{url_for('add_recipe')}}">Add Recipe<i class="material-icons left">playlist_add</i></a>
+                        </li>
+                        <li>
+                            <a href="{{url_for('my_recipes')}}">My Recipe<i class="material-icons left">supervisor_account</i></a>
+                        </li>
+                        <li>
+                            <a href="{{url_for('logout')}}">Logout<i class="material-icons left">close</i></a>
+                        </li>
                         {% else %}
-                        <li><a href="{{url_for('login')}}">Log In</a></li>
-                        {% endif %} 
+                        <li>
+                            <a href="{{url_for('login')}}">Log In<i class="material-icons left">login</i></a>
+                        </li>
+                        {% endif %}
                     </ul>
                     {% endif %}
                 </div>
