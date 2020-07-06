@@ -85,7 +85,7 @@ def get_recipes():
 @app.route('/my_recipes')
 def my_recipes():
     recipe = mongo.db.recipe.find({"recipe_author": session["username"]})
-    return render_template('recipes.html', recipe=recipe)
+    return render_template('recipes.html', recipe=recipe, my_recipes=True)
 
 
 @app.route('/add_recipe')
