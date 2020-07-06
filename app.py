@@ -91,9 +91,11 @@ def my_recipes():
 @app.route('/add_recipe')
 def add_recipe():
     return render_template('addrecipe.html',
-                           cuisines=mongo.db.cuisines.find(),
+                           cuisines=mongo.db.cuisines.find()
+                           .sort("recipe_cuisine"),
                            cooktime=mongo.db.cooktime.find(),
-                           recipetype=mongo.db.recipetype.find(),
+                           recipetype=mongo.db.recipetype.find()
+                           .sort("recipe_type"),
                            serving=mongo.db.serving.find())
 
 
