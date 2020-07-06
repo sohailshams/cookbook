@@ -126,16 +126,20 @@ def view_recipe(recipe_id):
 
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
-    the_recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
-    all_cuisines = mongo.db.cuisines.find()
-    all_cooktime = mongo.db.cooktime.find()
-    all_recipetype = mongo.db.recipetype.find()
-    all_serving = mongo.db.serving.find()
-    return render_template('editrecipe.html', recipe=the_recipe,
-                           cuisines=all_cuisines,
-                           cooktime=all_cooktime,
-                           recipetype=all_recipetype,
-                           serving=all_serving)
+    the_user = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
+    if session["username"] == the_user['recipe_author']:
+        the_recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
+        all_cuisines = mongo.db.cuisines.find()
+        all_cooktime = mongo.db.cooktime.find()
+        all_recipetype = mongo.db.recipetype.find()
+        all_serving = mongo.db.serving.find()
+        return render_template('editrecipe.html', recipe=the_recipe,
+                               cuisines=all_cuisines,
+                               cooktime=all_cooktime,
+                               recipetype=all_recipetype,
+                               serving=all_serving)
+    else:
+        return redirect(url_for('get_recipes'))
 
 
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
