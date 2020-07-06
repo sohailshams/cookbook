@@ -6,7 +6,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">outdoor_grill</i>
-                <input id="recipe_name" name="recipe_name" type="text" class="validate" minlength="1" required />
+                <input id="recipe_name" name="recipe_name" type="text" class="validate" minlength="1" maxlength="60" required />
                 <label for="recipe_name">Recipe Name</label>
             </div>
         </div>
@@ -14,21 +14,21 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
-                <textarea name="recipe_description" id="recipe_description" class="materialize-textarea" minlength="10" required></textarea>
+                <textarea name="recipe_description" id="recipe_description" type="text" class="materialize-textarea" minlength="10" maxlength="500" required></textarea>
                 <label for="recipe_description">Recipe Description</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">settings</i>
-                <textarea name="recipe_ingredients" id="recipe_ingredients" class="materialize-textarea" minlength="1" required></textarea>
+                <textarea name="recipe_ingredients" id="recipe_ingredients" type="text" class="materialize-textarea" minlength="1" maxlength="1000" required></textarea>
                 <label for="recipe_ingredients">Recipe Ingredients</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">format_list_numbered</i>
-                <textarea name="recipe_preparation" id="recipe_preparation" class="materialize-textarea" minlength="10" required></textarea>
+                <textarea name="recipe_preparation" id="recipe_preparation" type="text" class="materialize-textarea" minlength="10" maxlength="1500" required></textarea>
                 <label for="recipe_preparation">Recipe Preparation</label>
             </div>
         </div>
@@ -92,4 +92,10 @@
         </div>
     </form>
 </div>
+<script>
+        // Added following code as there is bug in Materialize for datepicker Task Manager application tutorial
+        document.getElementById("matfix").addEventListener("click", function (e) {
+            e.stopPropagation();
+            });
+</script>
 {% endblock %}

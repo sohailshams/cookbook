@@ -6,7 +6,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">outdoor_grill</i>
-                <input id="recipe_name" name="recipe_name" type="text" class="validate" value="{{recipe.recipe_name}}" minlength="1" required />
+                <input id="recipe_name" name="recipe_name" type="text" class="validate" value="{{recipe.recipe_name}}" minlength="1" maxlength="60" required />
                 <label for="recipe_name">Recipe Name</label>
             </div>
         </div>
@@ -14,21 +14,21 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
-                <textarea name="recipe_description" id="recipe_description" class="materialize-textarea" minlength="10" required>{{recipe.recipe_description}}</textarea>
+                <textarea name="recipe_description" id="recipe_description" type="text" class="materialize-textarea" minlength="10" maxlength="500" required>{{recipe.recipe_description}}</textarea>
                 <label for="recipe_description">Recipe Description</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">settings</i>
-                <textarea name="recipe_ingredients" id="recipe_ingredients" class="materialize-textarea" minlength="1" required>{{recipe.recipe_ingredients}}</textarea>
+                <textarea name="recipe_ingredients" id="recipe_ingredients" type="text" class="materialize-textarea" minlength="1" maxlength="1000" required>{{recipe.recipe_ingredients}}</textarea>
                 <label for="recipe_ingredients">Recipe Ingredients</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">format_list_numbered</i>
-                <textarea name="recipe_preparation" id="recipe_preparation" class="materialize-textarea" minlength="10" required>{{recipe.recipe_preparation}}</textarea>
+                <textarea name="recipe_preparation" id="recipe_preparation" type="text" class="materialize-textarea" minlength="10"  maxlength="1500" required>{{recipe.recipe_preparation}}</textarea>
                 <label for="recipe_preparation">Recipe Preparation</label>
             </div>
         </div>
@@ -101,12 +101,18 @@
         </div>
     </form>
 </div>
-<!-- Added JQuery import to over come the bug in datepicker-->
+<!-- Added JQuery import to over come the bug in datepicker source Task Manager application tutorial-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
         recipe_date = Date.parse("{{recipe.recipe_date}}");
         $("#recipe_date").pickadate("picker").set("select", recipe_date, { format: "dd/mm/yyyy" }).trigger("change");
     });
+</script>
+<script> 
+        //Added following code as there is bug in Materialize for datepicker Task Manager application tutorial
+        document.getElementById("matfix").addEventListener("click", function (e) {
+        e.stopPropagation();
+        });
 </script>
 {% endblock %}
