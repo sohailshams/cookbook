@@ -4,6 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Recipebook</title>
+        <!--Added underneath code to git rid of favicon 404 error source stake overflow-->
+        <link rel="shortcut icon" type="image/ico" href="#"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
@@ -137,12 +139,6 @@
             // Added underline code to make date picker field required
             // source stack overflow
             $(".datepicker").prop("readonly", false);
-        </script>
-        <script>
-            // Added following code as there is bug in Materialize for datepicker
-            document.getElementById("matfix").addEventListener("click", function (e) {
-                e.stopPropagation();
-            });
         </script>
     </body>
 </html>
