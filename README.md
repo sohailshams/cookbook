@@ -222,6 +222,10 @@ then the images starts flashing. I did not tried to fix it and it remains there.
 
 ## Deployment to Heroku
 
+- **[Recipebook Live Page](http://mss-recipebook.herokuapp.com/index_recipe)**
+
+- **[Recipebook Github Repository](https://github.com/sohailshams/cookbook)**
+
 1. Login to **[Heroko](https://www.heroku.com/)** account.
 2. Click on **New** at the right top corner and click on **Create new app**.
 3. Choose **App name** and a **region**. Then click on **Create app**.
