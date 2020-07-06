@@ -6,6 +6,12 @@
     font-family: 'Krona One', sans-serif;
 }
 /*----------------------------navbar */
+nav ul a {
+    padding: 10px;
+}
+i.left {
+    margin-right: 5px;
+}
 .navbar {
     min-height: 100px;
 }
@@ -14,7 +20,7 @@
     margin-top: 15px;
 }
 .nav-links {
-    margin-top: 15px;
+    margin-top: 8px;
 }
 
 .slogan{
