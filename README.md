@@ -101,7 +101,10 @@ page 3 etc.
 - **Recover Password** - Password recovery feature if forgotten will also be added in future.
 - **Recipe Image** - To make recipe visually appealing, recipe image addition option will also be added.
 - **Sort** - Sorting recipes accending or decending order feature will also be added in future.
-
+- In the **Input form** fields, user can insert content without giving spaces as a single line entry and add the recipe in the
+ database. When later this recipe is viewed then it is displayed in a weird way as text will be overlapping out of the text fields.
+ To overcome this I need to either add some complex Regular Expressions to the pattern or some keystroke queries using JavaScript,
+ that I left for future.
 ## Technologies Used
 
 - **HTML5**
@@ -128,6 +131,7 @@ how the changes looks like on different screen sizes. I created my on account an
 they work properly. In addition, I aslo asked my family, friends and slack community to test the project and give there feedback.
 
 ### User Stories
+
 User stories from the UX section were tested to see if they all work as intended. 
 - *As a user, I want to see a list / catalogue of recipes.*
 1. Go to the **Home** Page.
@@ -231,6 +235,12 @@ function and **My Recipes** function togeather with if statement in recipes.html
 and **Deleting Recipe** I realized later that, I need to hide it first then delay and it worked.
 5. **Carousel** - I found out that if user keep click on or on touch screen keep pressing the **Carousel (Image Slider)**
 then the images starts flashing. I did not tried to fix it and it remains there.
+6. I used **try and except block** in the **view_recipe** and **edit_recipe** functions. There is a error line underneath 
+**except** saying *do not use bare except*. I discussed with tutor support and beed suggested to leave it as it is for now.
+7.  In the **Input form** fields, user can insert content without giving spaces as a single line entry and add the recipe in the
+ database. When later this recipe is viewed then it is displayed in a weird way as text will be overlapping out of the text fields.
+ To overcome this I need to either add some complex Regular Expressions to the pattern or some keystroke queries using JavaScript,
+ that I left for future.
 
 ## Deployment to Heroku
 
