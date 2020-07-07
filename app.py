@@ -1,3 +1,4 @@
+"""Imports needed to write the code"""
 import os
 from flask import (
     Flask, render_template, request,
@@ -9,7 +10,7 @@ import bcrypt
 if os.path.exists("env.py"):
     import env
 
-
+# Create an instance of Flask, we store it in the app variable here.
 app = Flask(__name__)
 
 """MongoDB - setting env variables"""
@@ -24,11 +25,19 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/index_recipe')
 def index_recipe():
+    """On page load, index page is displayed."""
     return render_template('index.html')
 
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
+    """
+    Checks first in the database if username exist.
+    Then matches username and password match and returns
+    to index Page. If not then shows a flash message.
+    A variable login_page=True is passed to set if statement
+    to hide nav buttons on login page.
+    """
     if request.method == 'POST':
         users = mongo.db.users
         login_user = users.find_one({'username':
@@ -44,6 +53,12 @@ def login():
 
 @app.route('/register', methods=['POST', 'GET'])
 def register():
+    """
+    Checks first in the database if username exist.
+    If yes then show a flash message. If not then let
+    user to register. A variable login_page=True is passed
+    to set if statement to hide nav buttons on register page.
+    """
     if request.method == 'POST':
         users = mongo.db.users
         existing_user = users.find_one({'username':
@@ -61,6 +76,7 @@ def register():
 
 @app.route('/logout')
 def logout():
+    """Logs out the user and pops session"""
     if 'username' in session:
         session.pop('username')
     return redirect(url_for('index_recipe'))
@@ -79,17 +95,32 @@ def search_recipe():
 
 @app.route('/get_recipes')
 def get_recipes():
+    """
+    Get the recipes from database and render them
+    on recipes.html page.
+    """
     return render_template('recipes.html', recipe=mongo.db.recipe.find())
 
 
 @app.route('/my_recipes')
 def my_recipes():
+    """
+    Get the recipes own by the user in session from database
+    and render them on recipes.html page.
+    passed a variable my_recipe=True to set if statement to show
+    add recipe button if user in session have not added any recipe
+    yet and visit my recipes page.
+    """
     recipe = mongo.db.recipe.find({"recipe_author": session["username"]})
     return render_template('recipes.html', recipe=recipe, my_recipes=True)
 
 
 @app.route('/add_recipe')
 def add_recipe():
+    """
+    Get the data from collections in database and displays
+    in the add recipe form for user selection.
+    """
     return render_template('addrecipe.html',
                            cuisines=mongo.db.cuisines.find()
                            .sort("recipe_cuisine"),
@@ -102,6 +133,10 @@ def add_recipe():
 # Tim from tutor support helped to improve and re-write this function
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
+    """
+    Add the user's inserted data in the database and redirect
+    the user to recipes.html showing a flash message.
+    """
     recipe = mongo.db.recipe
     recipe.insert_one(
         {
@@ -122,6 +157,9 @@ def insert_recipe():
 
 @app.route('/view_recipe/<recipe_id>')
 def view_recipe(recipe_id):
+    """
+    Takes the recipe _id and show the details of the recipe.
+    """
     try:
         the_recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
         return render_template('viewrecipe.html', recipe=the_recipe)
@@ -132,6 +170,10 @@ def view_recipe(recipe_id):
 
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
+    """
+    It will check whether user in session is the owner of the recipe.
+    It also takes the recipe _id and show it in the edit form.
+    """
     try:
         the_user = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
         if session["username"] == the_user['recipe_author']:
@@ -154,6 +196,11 @@ def edit_recipe(recipe_id):
 
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_recipe(recipe_id):
+    """
+    It take the updated values and update the recipe details in 
+    the database. Will show a flash message and redirect to the
+    list of the recipes
+    """
     recipe = mongo.db.recipe
     recipe.update({'_id': ObjectId(recipe_id)},
                   {
@@ -174,6 +221,10 @@ def update_recipe(recipe_id):
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
+    """
+    It takes the recipe _id and delete it from database.
+    It will also show a flash message on the screen.
+    """
     mongo.db.recipe.remove({'_id': ObjectId(recipe_id)})
     flash('Recipe Successfully Deleted', 'success')
     return redirect(url_for('get_recipes'))
