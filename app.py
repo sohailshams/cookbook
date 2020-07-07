@@ -25,7 +25,9 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/index_recipe')
 def index_recipe():
-    """On page load, index page is displayed."""
+    """
+    On page load, index page is displayed.
+    """
     return render_template('index.html')
 
 
@@ -90,7 +92,7 @@ def search_recipe():
     mongo.db.recipe.create_index([("$**", 'text')])
     # search with the search word that came through the form
     recipe = mongo.db.recipe.find({"$text": {"$search": search_recipes}})
-    return render_template('recipes.html', recipe=recipe)
+    return render_template('recipes.html', recipe=recipe, search=True)
 
 
 @app.route('/get_recipes')
@@ -197,7 +199,7 @@ def edit_recipe(recipe_id):
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_recipe(recipe_id):
     """
-    It take the updated values and update the recipe details in 
+    It take the updated values and update the recipe details in
     the database. Will show a flash message and redirect to the
     list of the recipes
     """
