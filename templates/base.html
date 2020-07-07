@@ -13,9 +13,11 @@
     </head>
     <body>
         <header>
+        <!--Navbar-->
             <nav class="teal krona navbar">
                 <div class="nav-wrapper">
                     <a href="{{url_for('index_recipe')}}" class="brand-logo logo">Recipebook</a>
+                    <!--Add if statement to hide nav buttons on login and register page-->
                     {% if login_page is not defined %}
                     <a href="#" data-activates="mobile-demo" class="button-collapse buger-button"><i class="material-icons">menu</i></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down nav-links">
@@ -25,6 +27,7 @@
                         <li>
                             <a href="{{url_for('get_recipes')}}">All Recipes<i class="material-icons left">sort</i></a>
                         </li>
+                        <!--Add if statement to show Add Recipe, My Recipes & Logout buttons only if user is  logged in-->
                         {% if 'username' in session %}
                         <li>
                             <a href="{{url_for('add_recipe')}}">Add Recipe<i class="material-icons left">playlist_add</i></a>
@@ -35,6 +38,7 @@
                         <li>
                             <a href="{{url_for('logout')}}">Logout<i class="material-icons left">close</i></a>
                         </li>
+                        <!--If user is not logged in the show Log In instead of Add Recipe, My Recipes & Logout buttons-->
                         {% else %}
                         <li>
                             <a href="{{url_for('login')}}">Log In<i class="material-icons left">login</i></a>
@@ -48,6 +52,7 @@
                         <li>
                             <a href="{{url_for('get_recipes')}}">All Recipes<i class="material-icons left">sort</i></a>
                         </li>
+                        <!--Add if statement to show Add Recipe, My Recipes & Logout buttons only if user is  logged in-->
                         {% if 'username' in session %}
                         <li>
                             <a href="{{url_for('add_recipe')}}">Add Recipe<i class="material-icons left">playlist_add</i></a>
@@ -58,6 +63,7 @@
                         <li>
                             <a href="{{url_for('logout')}}">Logout<i class="material-icons left">close</i></a>
                         </li>
+                        <!--If user is not logged in the show Log In instead of Add Recipe, My Recipes & Logout buttons-->
                         {% else %}
                         <li>
                             <a href="{{url_for('login')}}">Log In<i class="material-icons left">login</i></a>
@@ -70,6 +76,7 @@
         </header>
         <main>
             <div class="container">
+            <!--Following code is used to diplay flash messages-->
                 <div class="row flash">
                     <div class="col s12">
                         {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
@@ -79,9 +86,11 @@
                         {% endfor %} {% endif %} {% endwith %}
                     </div>
                 </div>
+                <!--All the html templates are injected with this block content-->
                 {% block content %} {% endblock %}
             </div>
         </main>
+        <!--Footer-->
         <footer class="teal footer">
             <div class="container">
                 <div class="row center-align">

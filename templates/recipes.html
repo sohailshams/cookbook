@@ -5,6 +5,7 @@
         <img class="responsive-img recipe-image" src="static/images/recipe.jpg" alt="Recipe Image" />
     </div>
 </div>
+<!-- if statement added to display search result heading only when search function is used -->
 {% if search %}
 <h4 class="balsamiq">Search Result:</h4>
 {% endif %}
@@ -31,6 +32,7 @@
 {% else %}
 <!-- no results in 'recipe' variable -->
 <h4 class="balsamiq center-align no-result">No Recipe Found</h4>
+<!--if statement added to display the add recipe button and the text if user in session has no recipe added and click on my recipes-->
 {% if 'username' in session and my_recipes %}
 <div class="row">
     <div class="col s12">

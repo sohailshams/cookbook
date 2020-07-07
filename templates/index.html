@@ -1,6 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 <div class="row">
+<!--index page-->
     <div class="col s12">
+    <!--If statement to display a welcome user name on index page when login else a slogan-->
         {% if 'username' in session %}
         <h4 class="heading sub_heading balsamiq">Welcome {{ session['username'].capitalize() }}</h4>
         {% else %}
@@ -8,6 +10,7 @@
         {% endif %}
     </div>
 </div>
+<!--Carousel(image slider on the index page-->
 <div class="row slider-text">
     <div class="col s12 m8">
         <div class="carousel images">
@@ -28,6 +31,7 @@
     <div class="col s12 m4">
         <h4 class="text">Share your favourite recipes with others.</h4>
         <p class="text">Nothing bring together people like food.</p>
+        <!--if statement to show add recipe button if user is logged in else display all recipe button-->
         {% if 'username' in session %}
         <a href="{{url_for('add_recipe')}}" class="waves-effect waves-light btn balsamiq">Add Recipe<i class="material-icons right">playlist_add</i></a>
         {% else %}

@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 <h3 class="balsamiq">Edit Recipe</h3>
-
+<!--Edit Recipe form-->
 <div class="row balsamiq">
     <form action="{{url_for('update_recipe', recipe_id=recipe._id)}}" method="POST" class="col s12">
         <div class="row">

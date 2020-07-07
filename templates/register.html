@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 <h3 class="balsamiq">Sign Up</h3>
+<!--register page and user registration form-->
 <div class="row">
     <form class="col s12" method="POST" action="{{ url_for('register') }}">
         <div class="row">
@@ -21,6 +22,7 @@
             </button>
         </div>
     </form>
+    <!--button to go back to login page-->
     <p class="balsamiq">Already have an account? <a href="{{url_for('login')}}">Log In</a></p>
 </div>
 {% endblock %}
