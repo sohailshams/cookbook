@@ -212,12 +212,22 @@ field. I also wanted to show a feedback message to the user. To achieve this, I 
 But later I realized that **Add Recipe** function is not working. Since I used **Git** version control so I start going back to
 the previous versions of my project to find out after which commit **Add Recipe** button stopped working. At last I found out
 that its the **JavaScript** function that is causing this issue. So I replaced it with a **JQuery code** and solved this issue.
-2. **No Recipe Found** - If a user in session does not have any own recipe then **No Recipe Found** message is displayed but
+2. **Recepes can be stolen / Edited** - A very interesting bug that one of my friend **Elliot Redhead** point out was that a user can 
+steal someone else's recipe and can edit / delete. Although edit / delete button are ment to display only to recipe owner.
+Process of stealing recipe was;
+- First view someone else's recipe and copy the recipe ID from the URL.
+- Now open your own recipe in edit recipe page.
+- Remove your recipe's ID and paste someone else's recipe ID.
+- Press Enter now can edit someone els's recipe.
+- **Solution** - To overcome this issue I need to update my edit recipe function. I put a check over there that will first see 
+if the user who is trying to access the edit recipe page is the owner of the recipe. If **yes** then the function will let user
+to proceed to edit recipe page else user will be redirected to the home page.
+3. **No Recipe Found** - If a user in session does not have any own recipe then **No Recipe Found** message is displayed but
 in the beginning this message has been also displayed in **All recipes**. To overcome this issue I need to amend my **Search Recipe**
 function and **My Recipes** function togeather with if statement in recipes.html. Credit goes to Tim who helped me to fix this issue.
-3. **Flash Messages** - Flash messages were not appearing after a delay of few seconds on **Adding Recipe**, **Updating Recipe**
+4. **Flash Messages** - Flash messages were not appearing after a delay of few seconds on **Adding Recipe**, **Updating Recipe**
 and **Deleting Recipe** I realized later that, I need to hide it first then delay and it worked.
-4. **Carousel** - I found out that if user keep click on or on touch screen keep pressing the **Carousel (Image Slider)**
+5. **Carousel** - I found out that if user keep click on or on touch screen keep pressing the **Carousel (Image Slider)**
 then the images starts flashing. I did not tried to fix it and it remains there.
 
 ## Deployment to Heroku
@@ -273,7 +283,7 @@ then the images starts flashing. I did not tried to fix it and it remains there.
 4. A special thanks to my mentor **Ashish Srivastava** for his valuable feedback during mentoring sessions. 
 5. Besides tutor support [Stack overflow](https://stackoverflow.com/) was great source of help.
 6. I would like thank my lovely wife, my sons Ibrahim and Ismail for their support and motivation.
-7. I would like to thank Elliot Redhead for his valuable feedback and help.
+7. I would like to thank **Elliot Redhead** for his valuable feedback and help.
 
 ## Disclaimer
 This project is for educational purposes only.
