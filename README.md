@@ -54,7 +54,7 @@ I used [Balsamiq](https://balsamiq.com/) to create wireframes which will provide
 like on different mobile screen size.
 
 - [Link to Wireframes](https://balsamiq.cloud/sfyoi6/p2i2t4h/r2278) 
-- [Wireframes in PDF](static/wireframes/recipebook.pdf)
+- [Wireframes in PDF](static/wireframes/wireframes.pdf)
 
 ## Database Schema
 
