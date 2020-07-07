@@ -297,6 +297,8 @@ then the images starts flashing. I did not tried to fix it and it remains there.
 6. I would like thank my lovely wife, my sons Ibrahim and Ismail for their support and motivation.
 7. I would like to thank **Elliot Redhead** for his valuable feedback and help.
 8. [W3Schools](https://www.w3schools.com/)
+9. Used favicon Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> 
+from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 
 ## Disclaimer
 This project is for educational purposes only.
