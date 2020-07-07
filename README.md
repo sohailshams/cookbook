@@ -118,6 +118,8 @@ page 3 etc.
 - **[Google Fonts](https://fonts.google.com/)** - Google fonts *Balsamiq Sans* and *Krona One* are used in the project.
 - **[Git & Github](https://github.com/)** - Used for version control.
 - **[Git & Github](https://www.heroku.com/#)** - It is used as hosting platform to deploy the project.
+- **[HTML Formatter](https://webformatter.com/html)** - Used to format and beautify my code.
+
 
 ## Testing
 
@@ -284,6 +286,7 @@ then the images starts flashing. I did not tried to fix it and it remains there.
 5. Besides tutor support [Stack overflow](https://stackoverflow.com/) was great source of help.
 6. I would like thank my lovely wife, my sons Ibrahim and Ismail for their support and motivation.
 7. I would like to thank **Elliot Redhead** for his valuable feedback and help.
+8. [W3Schools](https://www.w3schools.com/)
 
 ## Disclaimer
 This project is for educational purposes only.
