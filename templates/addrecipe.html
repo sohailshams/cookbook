@@ -96,8 +96,9 @@
         </div>
     </form>
 </div>
+<!--Added underneath code here to avoid "Cannot read property addEventListener error" shown in console-->
 <script>
-        // Added following code as there is bug in Materialize for datepicker Task Manager application tutorial
+        // Added following code as there is bug in Materialize for datepicker source - Task Manager application tutorial
         document.getElementById("matfix").addEventListener("click", function (e) {
             e.stopPropagation();
             });
