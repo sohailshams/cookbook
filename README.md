@@ -27,7 +27,7 @@ This project is suitable to perform **CRUD** operations;
  ### User Stories
 
  1. As a user, I want to see a list / catalogue of recipes.
- 2. As a user, I want to search for recipes so that I can find easily and quickly.
+ 2. As a user, I want to search for recipes so that I can find recipes easily and quickly.
  3. As a user, I want to be able to create an account.
  4. As a user, I want to be able to login to my account.
  5. AS a user, I want to store/add  and share my recipes online with others.
@@ -79,25 +79,24 @@ All Recipes and Log In buttons are shown. Where as after login user can see Home
 At login and signup pages all navbar/sidenavbar links will disappear except the logo Recipebook. 
 - **All recipes** - When a user land on the home page and user has not logged in yet, user can see the list of all recipes in the database. User can also 
 see the list of all recipes once the user has logged in.
-- **Search** - User can search for any recipe in the database for being login or without login in the website.
+- **Search** - User can search for any recipe in the database either way, without logging in or after logging in the website.
 - **Register** - User can easily register if does not have an account as signup form is very simple. Signup form
-form has two fields username and password. It is required that a username must be minimum three character long and password 
-should be minimum 6 character long. It is not possible to have two accounts with the same
-name as I have included this feature to check whether the user name already exist or not. If username already exist then user will 
-be notified that username already exist with a flash message.
+form has two fields username and password. It is required that a username must be minimum of three character long and password 
+should be minimum 6 character long. It is not possible to have two accounts with the same name as before registration username will be
+checked if it already exist or not. If username already exist then user will be notified that username already exist with a flash message.
 - **Login** - If username password does not match user will get a message that invalid username/password.
 - **Flash Messages** - Flash Messages are shown to the user to keep user inform of user interactivity. Flash messages for 
-login and signup will stay untill pages is refreshed. Where as flash messages on recipe addition, deletion and update will 
+login and signup will stay untill these pages are refreshed. Where as flash messages on recipe addition, deletion and update will 
 disappear after 4 sec.
 - **Logout** - Logout allows a user to end the session and return to the home page.
-- **View** - It allows a user in session to see the details of a recipe.
+- **View** - It allows a user in session to see the details of a recipes in the database.
 - **Add Recipe** - It allows a user to add a new recipe in the database. All the fields are required in add recipe form. After 
-adding the recipe user will get a flash message that recipe is added successfully and will disappear after 3 sec. After this 
+adding the recipe user will get a flash message that recipe is added successfully and will disappear after few seconds. After this 
 user will be redirected to the all recipes page.
 - **Edit/Delete Recipe** - When user is logged in user can edit or delete a recipe which he owns.
 - **Edit/Delete Buttons**- Edit/Delete buttons will appear only if the user is the owner of that particular recipe.
 - **Cancel Button** - Cancel button is provied in edit recipe page for user's convenience to cancel the operation which will 
-redirect user back to that particular recipe that user was viewing.
+redirect the user back to that particular recipe that user was viewing before.
 - **Deletion Confirmation**- If a user click on delete button, then a modal will pop up to confirm if user is sure to delete the recipe or not.
 - **My Recipe** - If user want to see his own added recipes then **My Recipe** function will  display the list of user's own recipe.
 
@@ -111,7 +110,7 @@ page 3 etc.
 - **Recover Password** - Password recovery feature if forgotten will also be added in future.
 - **Recipe Image** - To make recipe visually appealing, recipe image addition option will also be added.
 - **Sort** - Sorting recipes accending or decending order feature will also be added in future.
-- In the **Input form** fields, user can insert content without giving spaces as a single line entry and add the recipe in the
+- In the **Input form** fields, user can insert content without giving spaces as a single line entry and can add the recipe in the
  database. When later this recipe is viewed then it is displayed in a weird way as text will be overlapping out of the text fields.
  To overcome this I need to either add some complex Regular Expressions to the pattern or some keystroke queries using JavaScript,
  that I left for future.
@@ -130,7 +129,7 @@ page 3 etc.
 - **[MongoDB](https://www.mongodb.com/)** - It is a NoSql database that is use to store data at the backend.
 - **[Google Fonts](https://fonts.google.com/)** - Google fonts *Balsamiq Sans* and *Krona One* are used in the project.
 - **[Git & Github](https://github.com/)** - Used for version control.
-- **[Git & Github](https://www.heroku.com/#)** - It is used as hosting platform to deploy the project.
+- **[Heroku](https://www.heroku.com/#)** - It is used as hosting platform to deploy the project.
 - **[HTML Formatter](https://webformatter.com/html)** - Used to format and beautify my code.
 
 
@@ -155,7 +154,7 @@ User stories from the UX section were tested to see if they all work as intended
 5. If no recipe found then a **No Recipe Found** will be displayed.
 - *As a user, I want to be able to create an account.*
 1. Go to the **Home** Page.
-2. Click on **log In** button AND then **Sign Up** button.
+2. Click on **log In** button and then **Sign Up** button.
 3. Fill in username, password and click on **Sign Up** button.
 4. If username does not exist already then a user account will be created and user will be redirected to **Home** page.
 5. If user already exist then user will get a message that **User already exists.**
@@ -223,12 +222,12 @@ The code has been validated by using;
 
 ### Interesting Bugs / Issue
 
-1. **Add Recipe function stopped working** - I encountered a very interesting bug when I made my datepicker filed a required 
+1. **Add Recipe function stopped working** - I encountered a very interesting bug when I made datepicker field a required 
 field. I also wanted to show a feedback message to the user. To achieve this, I added a **JavaScript** function which I took from **Stack overflow**. 
 But later I realized that **Add Recipe** function is not working. Since I used **Git** version control so I start going back to
 the previous versions of my project to find out after which commit **Add Recipe** button stopped working. At last I found out
 that its the **JavaScript** function that is causing this issue. So I replaced it with a **JQuery code** and solved this issue.
-2. **Recepes can be stolen / Edited** - A very interesting bug that one of my friend **Elliot Redhead** point out was that a user can 
+2. **Recipes can be stolen / Edited** - A very interesting bug that one of my friend **Elliot Redhead** point out was that a user can 
 steal someone else's recipe and can edit / delete. Although edit / delete button are ment to display only to recipe owner.
 Process of stealing recipe was;
 - First view someone else's recipe and copy the recipe ID from the URL.
