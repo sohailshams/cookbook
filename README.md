@@ -9,10 +9,20 @@ and has the possibility of add, update or delete his/her own recipes.
 
 # UX
 
+### Target Audience
+
  The target audience of this web-application are food lovers who are either in search of good cooking recipes or they want to store 
  their favourite recipes online and want to share with the rest of the world. The purpose of this web-application 
  is to provide a platform to food lovers so they can share their cooking recipes with other. Besides this the web-application
  owner's goal is to create a cooking recipes database.
+
+### Project Suitability
+
+This project is suitable to perform **CRUD** operations;
+- Users have the ability to create, view and search for recipes in th database.
+- Users have the ability to edit or delete their own recipes.
+- Users can only view other's recipes but did not have the access to edit or delete other's recipes.
+- User login system has put in place so that user can manage their recipes.
 
  ### User Stories
 
@@ -276,7 +286,7 @@ then the images starts flashing. I did not tried to fix it and it remains there.
 5. Open app.py file and install requirements.txt by running comman **pip3 install -r requirements.txt**.
 6. Create a database in **MONGODB** following this scheme - [Collections Schema in PDF](static/collections/collections.pdf)
 7. Create env.py file and add **MONGO_URI** and **SECRET_KEY**. 
-8. Now run the app by running code **python3 app.py**
+8. Now run the app.py by running code **python3 app.py**
 
 ## Credits
 ### Content
