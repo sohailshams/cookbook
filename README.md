@@ -244,9 +244,7 @@ function and **My Recipes** function togeather with if statement in recipes.html
 and **Deleting Recipe** I realized later that, I need to hide it first then delay and it worked.
 5. **Carousel** - I found out that if user keep click on or on touch screen keep pressing the **Carousel (Image Slider)**
 then the images starts flashing. I did not tried to fix it and it remains there.
-6. I used **try and except block** in the **view_recipe** and **edit_recipe** functions. There is a error line underneath 
-**except** saying *do not use bare except*. I discussed with tutor support and beed suggested to leave it as it is for now.
-7.  In the **Input form** fields, user can insert content without giving spaces as a single line entry and add the recipe in the
+6.  In the **Input form** fields, user can insert content without giving spaces as a single line entry and add the recipe in the
  database. When later this recipe is viewed then it is displayed in a weird way as text will be overlapping out of the text fields.
  To overcome this I need to either add some complex Regular Expressions to the pattern or some keystroke queries using JavaScript,
  that I left for future.
@@ -308,6 +306,7 @@ then the images starts flashing. I did not tried to fix it and it remains there.
 8. [W3Schools](https://www.w3schools.com/)
 9. Used favicon Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> 
 from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+10. [Flask Error Handler](https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/)
 
 ## Disclaimer
 This project is for educational purposes only.
