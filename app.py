@@ -31,6 +31,13 @@ def index_recipe():
     return render_template('index.html')
 
 
+@app.errorhandler(404)
+# inbuilt function which takes error as parameter
+def not_found(e):
+    # defining function
+    return render_template("404.html"), 404
+
+
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     """
@@ -159,15 +166,15 @@ def insert_recipe():
 
 @app.route('/view_recipe/<recipe_id>')
 def view_recipe(recipe_id):
+
     """
     Takes the recipe _id and show the details of the recipe.
     """
     try:
         the_recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
         return render_template('viewrecipe.html', recipe=the_recipe)
-    except:
-        flash('Page is not available.', 'success')
-        return redirect(url_for('index_recipe'))
+    except Exception:
+        return render_template("404.html")
 
 
 @app.route('/edit_recipe/<recipe_id>')
@@ -191,9 +198,8 @@ def edit_recipe(recipe_id):
                                    serving=all_serving)
         else:
             return redirect(url_for('get_recipes'))
-    except:
-        flash('Page is not available.', 'success')
-        return redirect(url_for('index_recipe'))
+    except Exception:
+        return render_template("404.html")
 
 
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
