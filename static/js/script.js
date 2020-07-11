@@ -14,6 +14,8 @@ $(document).ready(function() {
     $(".modal").modal();
     // code initializer for flash message
     $(".alert.success").hide().delay(1000).fadeIn(200).delay(4000).fadeOut(200);
+    // code initializer for character counter in input fields
+    $('input#recipe_name, textarea#recipe_description, textarea#recipe_ingredients, textarea#recipe_preparation').characterCounter();
 });
 // Added underline code to show feedback message of required in the select
 //source stack overflow
