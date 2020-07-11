@@ -52,6 +52,7 @@ This project is suitable to perform **CRUD** operations;
 1. The target_blank value is given to the social links in the footer so that they will open in a new tab / window on click.
 2. The required attribute is used in the **Search bar**, **Log In form**, **Sign Up form**, **Add Recipe form** and **Edit Recipe form** so that user 
 fill in all the fiels before performing the respective action.
+3. Maximum, minimum and character counter attributes are also added in the input fields for better user experience. 
 
 #### Hover Effect
 
