@@ -139,7 +139,7 @@ page 3 etc.
 ## Testing
 
 Google developers tool has been used to test the project constantly form the  beginning to identify any error or to see 
-how the changes looks like on different screen sizes. I created my on account and tested all the functions to make sure 
+how the changes looks like on different screen sizes. I created my own account and tested all the functions to make sure 
 they work properly. In addition, I aslo asked my family, friends and slack community to test the project and give there feedback.
 
 ### User Stories
