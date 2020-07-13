@@ -100,6 +100,8 @@ user will be redirected to the all recipes page.
 redirect the user back to that particular recipe that user was viewing before.
 - **Deletion Confirmation**- If a user click on delete button, then a modal will pop up to confirm if user is sure to delete the recipe or not.
 - **My Recipe** - If user want to see his own added recipes then **My Recipe** function will  display the list of user's own recipe.
+- **Error handler(404), try and except** - If user enters broken url, then for better user experience an errorhandler(404) is added. This will
+display a message **Oops! Looks like you entered wrong URL**. It will also provide link to the home page for user convenience.
 
 ### Features Left to Implement
 
