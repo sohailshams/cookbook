@@ -295,7 +295,7 @@ then the images starts flashing. I did not tried to fix it and it remains there.
 
 ### Media
 
-- The pictures in the Carousel(image slider) been taken from [Google](https://www.google.com/)
+- All pictures including pictures in the Carousel(image slider) been taken from [Google](https://www.google.com/)
 
 ### Acknowledgements
 1. Code Institute's **Task Manager Application** was great source of inspiration. I follow it to design and develop my **Recipebook** website.
